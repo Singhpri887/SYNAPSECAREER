@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynapseCareer | AI-Powered Job Recommendation System</title>
+  <meta name="description"
+    content="Futuristic AI-powered job recommendation platform for university students featuring interactive holographic neural matching, skill vector analysis, and personalized career roadmaps.">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,800;1,400&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon: High-Tech Neural Infinity Nexus SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2300f5ff'/><stop offset='50%25' stop-color='%238b5cf6'/><stop offset='100%25' stop-color='%2310b981'/></linearGradient></defs><polygon points='50,5 92,27 92,73 50,95 8,73 8,27' stroke='url(%23g)' stroke-width='4' fill='%230b1329'/><path d='M35,32 C42,20 62,20 68,32 C74,44 60,50 50,50 C40,50 26,56 32,68 C38,80 58,80 65,68' stroke='url(%23g)' stroke-width='4.5' fill='none' stroke-linecap='round'/><circle cx='50' cy='50' r='5' fill='%23ffffff'/><circle cx='50' cy='18' r='4' fill='%2300f5ff'/><circle cx='80' cy='50' r='3.5' fill='%2310b981'/><circle cx='20' cy='50' r='3.5' fill='%23d946ef'/><circle cx='50' cy='82' r='4' fill='%23ffd15c'/></svg>">
+  <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Anti-FOUC Instant Theme Initializer -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('synapse_theme');
+        if (!savedTheme) {
+          savedTheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/neural.css">
+  <link rel="stylesheet" href="styles/robot.css?v=2.5">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       ULTRA-FUTURISTIC QUANTUM AI BOOT INTRO SPLASH SCREEN
+       ========================================================================= -->
+  <div class="app-intro-splash" id="appIntroSplash">
+    <div class="splash-backdrop">
+      <div class="splash-grid-mesh"></div>
+      <div class="splash-radial-beam"></div>
+      <div class="splash-laser-scan"></div>
+      <div class="splash-particles" id="splashParticles"></div>
+    </div>
+
+    <div class="splash-content-box">
+      <!-- High-Tech Hologram Singularity Logo Core -->
+      <div class="splash-logo-stage" id="splashLogoStage">
+        <div class="splash-orbit-rings">
+          <div class="splash-ring-outer"></div>
+          <div class="splash-ring-mid"></div>
+          <div class="splash-ring-scanner"></div>
+        </div>
+
+        <div class="splash-logo-emblem">
+          <svg class="splash-logo-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="splashShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f5ff" />
+                <stop offset="35%" stop-color="#8b5cf6" />
+                <stop offset="70%" stop-color="#ec4899" />
+                <stop offset="100%" stop-color="#00ff9d" />
+              </linearGradient>
+              <linearGradient id="splashCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="30%" stop-color="#00f5ff" />
+                <stop offset="70%" stop-color="#ec4899" />
+                <stop offset="100%" stop-color="#00ff9d" />
+              </linearGradient>
+              <filter id="splashGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Holographic Outer Shield Frame -->
+            <polygon class="splash-crest-outer" points="80,6 148,40 148,120 80,154 12,120 12,40"
+              stroke="url(#splashShieldGrad)" stroke-width="3.8" fill="rgba(8, 12, 28, 0.88)" />
+            <polygon class="splash-crest-inner" points="80,18 136,47 136,113 80,142 24,113 24,47" stroke="#00f5ff"
+              stroke-width="1.5" stroke-dasharray="8 6" opacity="0.65" />
+
+            <!-- Tri-Axis Neural Circuit Streamers -->
+            <path class="splash-synapse-vortex v1" d="M 80 80 L 80 26 M 80 80 L 126 106 M 80 80 L 34 106"
+              stroke="url(#splashShieldGrad)" stroke-width="4" stroke-linecap="round" />
+            <circle class="splash-orbit-node node-1" cx="80" cy="26" r="6.5" fill="#00f5ff"
+              filter="url(#splashGlowFilter)" />
+            <circle class="splash-orbit-node node-2" cx="126" cy="106" r="6.5" fill="#00ff9d"
+              filter="url(#splashGlowFilter)" />
+            <circle class="splash-orbit-node node-3" cx="34" cy="106" r="6.5" fill="#ec4899"
+              filter="url(#splashGlowFilter)" />
+
+            <!-- Orbital Neural Torus -->
+            <circle class="splash-torus-ring" cx="80" cy="80" r="38" stroke="#8b5cf6" stroke-width="1.8"
+              stroke-dasharray="10 6" opacity="0.75" />
+
+            <!-- Central Diamond Singularity & Pulsing Energy Core -->
+            <circle class="splash-singularity-aura" cx="80" cy="80" r="18" fill="url(#splashCoreGrad)" opacity="0.9"
+              filter="url(#splashGlowFilter)" />
+            <polygon class="splash-singularity-star" points="80,58 86,74 102,80 86,86 80,102 74,86 58,80 74,74"
+              fill="#ffffff" filter="url(#splashGlowFilter)" />
+            <circle cx="80" cy="80" r="4" fill="#050814" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Holographic Brand Title & Tagline -->
+      <div class="splash-brand-title-wrap">
+        <div class="splash-badge-chip">✦ NEURAL CORE v4.0 ✦</div>
+        <h1 class="splash-brand-title">SYNAPSE<span class="splash-title-highlight">CAREER</span></h1>
+        <p class="splash-brand-sub">QUANTUM AI CAREER INTELLIGENCE & PATHWAY ENGINE</p>
+      </div>
+
+      <!-- Boot Loader Meter & Status Telemetry -->
+      <div class="splash-loader-panel">
+        <div class="splash-status-row">
+          <span class="splash-status-text" id="splashStatusText">INITIALIZING SYNAPTIC VORTEX MATRIX...</span>
+          <span class="splash-percent-text" id="splashPercentText">0%</span>
+        </div>
+        <div class="splash-progress-track">
+          <div class="splash-progress-fill" id="splashProgressFill">
+            <span class="splash-scan-flare"></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="splash-skip-btn" id="splashSkipBtn" title="Directly Enter App">
+        <span>CLICK TO ENTER SYSTEM</span>
+        <span class="splash-skip-arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Ambient Glow Elements -->
+  <div class="ambient-glow-top"></div>
+
+  <!-- Floating Quick Theme Switcher Pill -->
+  <button class="floating-theme-pill" id="floatingThemeToggle" title="Toggle Cyber Cyan / Neon Nebula Theme"
+    aria-label="Toggle Theme">
+    <span class="float-theme-icon" id="floatingThemeIcon">🌌</span>
+    <span class="float-theme-text" id="floatingThemeText">THEME: CYBER CYAN</span>
+  </button>
+
+  <div class="app-container">
+
+    <!-- Top HUD Navigation -->
+    <header class="app-header glass-panel" id="mainHeader">
+      <!-- Branded Ultra-Futuristic Quantum AI Neural Logo & Typography -->
+      <div class="brand-section">
+        <div class="brand-logo-container" id="brandLogoContainer"
+          title="SynapseCareer Quantum Neural Core v4.0 (Click to interact)">
+          <svg class="brand-logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mainShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--neon-cyan)" />
+                <stop offset="50%" stop-color="var(--neon-purple)" />
+                <stop offset="100%" stop-color="var(--neon-emerald)" />
+              </linearGradient>
+              <linearGradient id="neuralCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="40%" stop-color="var(--neon-cyan)" />
+                <stop offset="100%" stop-color="var(--neon-magenta)" />
+              </linearGradient>
+              <filter id="coreGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 1. Isometric Beveled Shield Crest -->
+            <polygon class="logo-crest-outer" points="60,4 112,30 112,90 60,116 8,90 8,30" stroke="url(#mainShieldGrad)"
+              stroke-width="3.2" fill="var(--bg-surface-elevated)" fill-opacity="0.9" />
+            <polygon class="logo-crest-inner" points="60,14 102,36 102,84 60,106 18,84 18,36" stroke="var(--neon-cyan)"
+              stroke-width="1.2" stroke-dasharray="6 4" opacity="0.45" />
+
+            <!-- 2. Dynamic Synapse Neural Vortex Circuit -->
+            <path class="logo-vortex-path v1" d="M 60 60 L 60 20 M 60 60 L 95 78 M 60 60 L 25 78"
+              stroke="url(#mainShieldGrad)" stroke-width="3" stroke-linecap="round" />
+            <path class="logo-vortex-path v2" d="M 60 20 C 85 25 105 50 95 78 C 75 95 45 95 25 78 C 15 50 35 25 60 20 Z"
+              stroke="var(--neon-purple)" stroke-width="1.6" stroke-dasharray="8 5" opacity="0.6" fill="none" />
+
+            <!-- 3. Glowing Synaptic Orbit Beacons -->
+            <circle class="logo-node-beacon b-top" cx="60" cy="20" r="5" fill="var(--neon-cyan)"
+              filter="url(#coreGlowFilter)" />
+            <circle class="logo-node-beacon b-right" cx="95" cy="78" r="5" fill="var(--neon-emerald)"
+              filter="url(#coreGlowFilter)" />
+            <circle class="logo-node-beacon b-left" cx="25" cy="78" r="5" fill="var(--neon-magenta)"
+              filter="url(#coreGlowFilter)" />
+
+            <!-- 4. Quantum Diamond AI Singularity -->
+            <circle class="logo-singularity-aura" cx="60" cy="60" r="13" fill="url(#neuralCoreGrad)" opacity="0.85"
+              filter="url(#coreGlowFilter)" />
+            <polygon class="logo-singularity-star" points="60,46 64,56 74,60 64,64 60,74 56,64 46,60 56,56"
+              fill="#ffffff" filter="url(#coreGlowFilter)" />
+            <circle cx="60" cy="60" r="3" fill="var(--bg-deep)" />
+          </svg>
+          <div class="logo-orbit-ring"></div>
+        </div>
+        <div class="brand-text-block">
+          <div class="brand-title-wrap">
+            <h1 class="brand-title">SYNAPSE<span class="brand-title-accent">CAREER</span></h1>
+            <span class="brand-badge-ai">✦ QUANTUM AI 4.0</span>
+          </div>
+          <p class="brand-tagline"><span class="tagline-pulse"></span>AI Pathway & Neural Synthesis Engine</p>
+        </div>
+      </div>
+
+      <div class="nav-actions-wrap">
+        <!-- Dual Cyber Theme Segmented Controller -->
+        <div class="theme-segmented-control" id="themeSegmentedControl" role="group" aria-label="Cyber Theme Selector">
+          <button class="theme-seg-btn active" id="btnThemeDark" data-set-theme="dark"
+            title="Switch to Cyber Cyan (Matrix Dark)">
+            <span class="theme-seg-icon">🌌</span>
+            <span class="theme-seg-text">Cyber Cyan</span>
+          </button>
+          <button class="theme-seg-btn" id="btnThemeNebula" data-set-theme="nebula"
+            title="Switch to Neon Nebula (Synthwave Violet)">
+            <span class="theme-seg-icon">🔮</span>
+            <span class="theme-seg-text">Neon Nebula</span>
+          </button>
+        </div>
+
+        <!-- ═══ Premium Navbar Auth Widget ═══ -->
+        <div class="navbar-auth-widget" id="navbarAuthWidget">
+          <!-- Guest State (default) -->
+          <button class="navbar-auth-btn" id="navbarAuthBtn" title="Click to Login or Register your Candidate Profile">
+            <div class="navbar-auth-avatar" id="navbarAuthAvatar">
+              <span class="auth-avatar-glyph">👤</span>
+            </div>
+            <div class="navbar-auth-info">
+              <span class="navbar-auth-name" id="navbarAuthName">Guest</span>
+              <span class="navbar-auth-status" id="navbarAuthStatus">Sign In / Login</span>
+            </div>
+            <div class="navbar-auth-chevron">⌄</div>
+          </button>
+
+          <!-- Dropdown Panel -->
+          <div class="navbar-auth-dropdown" id="navbarAuthDropdown">
+            <!-- Not logged in -->
+            <div id="navbarGuestPanel">
+              <div class="navbar-dropdown-header">
+                <div class="navbar-dropdown-icon">🔐</div>
+                <div>
+                  <div class="navbar-dropdown-title">SynapseCareer Access</div>
+                  <div class="navbar-dropdown-sub">AI-Powered Career Portal</div>
+                </div>
+              </div>
+              <button class="navbar-dropdown-action-btn" id="navbarLoginTriggerBtn">
+                <span>🚀</span> Login / Register Account
+              </button>
+              <p class="navbar-dropdown-hint">OTP verified · Secure · Instant access</p>
+            </div>
+
+            <!-- Logged in state (hidden until auth) -->
+            <div id="navbarUserPanel" style="display:none;">
+              <div class="navbar-dropdown-header">
+                <div class="navbar-dropdown-avatar-lg" id="navbarDropdownAvatar">✅</div>
+                <div>
+                  <div class="navbar-dropdown-title" id="navbarDropdownName">User</div>
+                  <div class="navbar-dropdown-sub" id="navbarDropdownEmail">verified@email.com</div>
+                </div>
+              </div>
+              <div class="navbar-dropdown-status-row">
+                <span class="live-indicator-dot"></span>
+                <span id="navbarDropdownStatusLabel">LOGGED IN • ACTIVE</span>
+              </div>
+              <button class="navbar-dropdown-action-btn" id="navbarOpenWizardBtn"
+                style="background: rgba(16,185,129,0.12); border-color: var(--neon-emerald);">
+                <span>🛠️</span> Open Resume Wizard
+              </button>
+              <button class="navbar-dropdown-logout-btn" id="navbarLogoutBtn">
+                <span>⏻</span> Sign Out
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-action-btn nav-btn-copilot" id="openCareerCopilotBtn">
+          <span>✨</span> AI Copilot
+        </button>
+
+        <button class="nav-action-btn nav-btn-analytics" id="openMarketAnalyticsBtn">
+          <span>📊</span> Market Trends
+        </button>
+
+        <button class="nav-action-btn nav-btn-interview" id="openMockInterviewBtn">
+          <span>🎯</span> Mock Interview
+        </button>
+
+        <button class="nav-action-btn nav-btn-mcq" id="openPlacementMCQBtn">
+          <span>📚</span> Placement MCQ
+        </button>
+
+        <button class="nav-action-btn nav-btn-resume" id="openResumeOptimizerBtn">
+          <span>📝</span> Resume Optimizer
+        </button>
+
+        <a href="resume-builder.html" class="nav-action-btn" id="openResumeBuilderPageBtn"
+          style="text-decoration:none; background: linear-gradient(135deg, rgba(0, 245, 255, 0.18), rgba(139, 92, 246, 0.22)); border: 1px solid var(--neon-cyan); color: #fff; box-shadow: 0 0 14px rgba(0, 245, 255, 0.35); font-weight: 700;">
+          <span style="color:var(--neon-emerald)">⚡</span> AI Resume & ATS
+        </a>
+
+        <!-- Live Real-Time Telemetry HUD Monitor -->
+        <div class="hud-telemetry-badge" id="hudTelemetryBadge"
+          title="Click to view Live AI Diagnostics & Ping Telemetry">
+          <div class="hud-ai-live-group" id="hudAiLiveGroup">
+            <span class="live-indicator-dot" id="hudLiveDot"></span>
+            <span id="hudSystemStatus">REAL-TIME AI: <strong style="color: var(--neon-emerald);">LIVE (PORT
+                5000)</strong></span>
+            <span class="hud-latency-pill" id="hudLatencyPill">12ms</span>
+          </div>
+          <span class="hud-divider" style="color: var(--border-glass);">|</span>
+          <div class="hud-top-match-group" id="hudTopMatchGroup" title="Click to spotlight Top Matched Role">
+            <span>TOP MATCH: <strong id="hudTopScore" class="hud-top-score-val"
+                style="color: var(--neon-emerald);">97%</strong></span>
+          </div>
+        </div>
+
+        <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle Futuristic Audio FX">
+          🔈 Audio FX: OFF
+        </button>
+      </div>
+    </header>
+
+    <!-- Futuristic Real-Time Job Portal & Hero Showcase -->
+    <section class="portal-hero-showcase" id="portalHeroShowcase" aria-label="Portal Overview">
+      <img src="assets/portal_hero.jpg" alt="Futuristic AI Job Portal Hub" class="portal-hero-bg">
+      <div class="portal-hero-gradient">
+        <div class="portal-hero-content">
+          <span class="hud-pill" style="background: rgba(0, 240, 255, 0.15); border-color: var(--neon-cyan);">
+            <span class="live-indicator-dot"></span> GLOBAL TALENT SYNAPSE ENGINE
+          </span>
+          <h2 class="portal-hero-title">Learning for Job-Ready in IT Field</h2>
+          <p class="portal-hero-desc">
+            Seamlessly bridging university talent with tier-1 technology teams via real-time skill vector synthesis and
+            automated ATS optimization.
+          </p>
+          <div
+            style="margin-top: 1rem; margin-bottom: 1.2rem; display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+            <a href="resume-builder.html"
+              style="background: linear-gradient(135deg, #00f5ff, #8b5cf6); color: #050814; font-weight: 800; font-size: 0.88rem; text-decoration: none; padding: 0.65rem 1.35rem; border-radius: 8px; box-shadow: 0 4px 18px rgba(0, 245, 255, 0.35); display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s;">
+              <span>⚡</span> Launch Free AI Resume Builder &amp; ATS Scanner &rarr;
+            </a>
+          </div>
+          <div class="portal-hero-badges" id="portalHeroBadges">
+            <div class="portal-hero-badge-item interactive-hero-stat" id="heroBadgeVectors"
+              title="Click to trigger Quantum Vector Matrix Scan on Canvas">
+              <div class="hero-badge-top-row">
+                <span class="hero-stat-dot dot-cyan"></span>
+                <span class="portal-hero-badge-val" id="heroValVectors" style="color: var(--neon-cyan);">1.2M+</span>
+              </div>
+              <span class="portal-hero-badge-lbl">Active Vectors <span class="hero-badge-action-hint">⚡
+                  Scan</span></span>
+            </div>
+
+            <div class="portal-hero-badge-item interactive-hero-stat" id="heroBadgeOpenings"
+              title="Click to fetch/focus Live Web Job Feed">
+              <div class="hero-badge-top-row">
+                <span class="hero-stat-dot dot-emerald"></span>
+                <span class="portal-hero-badge-val" id="heroValOpenings"
+                  style="color: var(--neon-emerald);">450K+</span>
+              </div>
+              <span class="portal-hero-badge-lbl">Live Openings <span class="hero-badge-action-hint">🌐
+                  View</span></span>
+            </div>
+
+            <div class="portal-hero-badge-item interactive-hero-stat" id="heroBadgePrecision"
+              title="Click to run Neural Model Precision Benchmark">
+              <div class="hero-badge-top-row">
+                <span class="hero-stat-dot dot-gold"></span>
+                <span class="portal-hero-badge-val" id="heroValPrecision" style="color: var(--neon-gold);">98.4%</span>
+              </div>
+              <span class="portal-hero-badge-lbl">Neural Precision <span class="hero-badge-action-hint">🎯
+                  Calibrate</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard-grid">
+
+      <!-- Left Column: Student Profile & Skills Hub -->
+      <aside class="student-hud-column" aria-label="Student Profile and Skill Adjustment">
+
+        <section class="glass-panel" id="profilePanel">
+          <div class="panel-header">
+            <h2 class="panel-title">
+              <span class="icon-glow">🧠</span> Skill Vector Controls
+            </h2>
+            <span class="hud-pill"><span class="live-indicator-dot"></span> LIVE TENSOR</span>
+          </div>
+
+          <div class="panel-body">
+            <!-- Active Candidate / Student Profile HUD Card -->
+            <div class="candidate-auth-banner-card" id="activeCandidateHUDCard">
+              <div class="candidate-auth-top">
+                <div class="candidate-logo-shield">
+                  <svg class="candidate-shield-svg" viewBox="0 0 100 100" fill="none">
+                    <defs>
+                      <linearGradient id="candShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f5ff" />
+                        <stop offset="50%" stop-color="#8b5cf6" />
+                        <stop offset="100%" stop-color="#00ff9d" />
+                      </linearGradient>
+                    </defs>
+                    <polygon points="50,4 94,26 94,74 50,96 6,74 6,26" stroke="url(#candShieldGrad)" stroke-width="3"
+                      fill="rgba(8, 14, 30, 0.85)" />
+                    <circle cx="50" cy="50" r="22" stroke="rgba(0, 245, 255, 0.4)" stroke-width="1.5"
+                      stroke-dasharray="4 3" />
+                  </svg>
+                  <div class="candidate-avatar-bubble" id="studentAvatar">⭐</div>
+                </div>
+                <div class="candidate-meta-info">
+                  <div class="candidate-status-tag" id="candidateStatusTag">
+                    <span class="live-indicator-dot"></span>
+                    <span id="candidateStatusLabel">ACTUAL USER • LIVE INFERENCE</span>
+                  </div>
+                  <h3 class="candidate-name-display" id="studentName"></h3>
+                  <p class="candidate-major-display" id="studentMajor">Full Stack &amp; AI Engineer • Candidate</p>
+                  <p id="studentBio"
+                    style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; margin-top: 2px;">
+                    Real-world candidate profile with active skill vectors. Traces synaptic flow across multi-layer
+                    neural architecture.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Archetype Quick Selector -->
+            <div class="archetype-selector-header">
+              <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <label class="archetype-selector-label" style="margin-bottom: 0;">Load Demo / Actual Archetype</label>
+                <button type="button" class="btn-edit-actual" id="openEditActualUserBtn"
+                  title="Customize your actual Name, Role &amp; Skills"
+                  style="background: rgba(0, 245, 255, 0.08); border: 1px solid var(--neon-cyan); border-radius: 6px; color: var(--neon-cyan); font-size: 0.72rem; padding: 3px 8px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: 0.2s;">
+                  <span>✏️</span> Edit My Details
+                </button>
+              </div>
+            </div>
+            <div class="archetype-pills" id="archetypePills">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Skill Adjustment Sliders -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <label class="archetype-selector-label" style="margin-bottom: 0;">Skill Vector Coefficients</label>
+              <span style="font-size: 0.7rem; color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace;">LIVE
+                TENSOR</span>
+            </div>
+
+            <div class="skills-container" id="skillsContainer">
+              <!-- Dynamically populated skill sliders -->
+            </div>
+
+            <!-- Interactive Resume Wizard Trigger -->
+            <button class="resume-parser-toggle" id="openResumeWizardBtn"
+              style="border-color: var(--neon-cyan); background: rgba(0, 240, 255, 0.08); margin-bottom: 0.6rem;">
+              <span>🛠️</span> Build Tailored Resume (Step-by-Step Wizard)
+            </button>
+
+            <!-- Resume / Bio NLP Parser Simulation -->
+            <button class="resume-parser-toggle" id="resumeToggleBtn">
+              <span>📄</span> Paste Bio / Resume to Auto-Extract Skills
+            </button>
+
+            <div class="resume-parser-box" id="resumeParserBox">
+              <textarea class="resume-textarea" id="resumeTextInput"
+                placeholder="e.g. Built a deep learning project in PyTorch with transformers and Docker. Proficient in Python, SQL analytics, and REST API deployment..."></textarea>
+              <button class="parse-submit-btn" id="parseResumeBtn">
+                Extract &amp; Map to Neural Model
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- Right Column: Visualizer Canvas & Recommendations -->
+      <section class="main-stage-column" aria-label="AI Matching Stage">
+
+        <!-- Holographic Neural Network Visualizer Frame -->
+        <div class="visualizer-frame" id="visualizerFrame">
+          <div class="corner-bracket corner-tl"></div>
+          <div class="corner-bracket corner-tr"></div>
+          <div class="corner-bracket corner-bl"></div>
+          <div class="corner-bracket corner-br"></div>
+
+          <div class="visualizer-hud-topbar">
+            <div class="hud-pill" id="topologyHudPill">
+              <span class="live-indicator-dot"></span>
+              <span id="topologyTitle">SYNAPSE TOPOLOGY: MULTI-LAYER PERCEPTRON (60 FPS)</span>
+            </div>
+            <div class="hud-pill" id="topologyCandidatePill"
+              style="color: var(--neon-gold); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;">
+              <span id="topologyCandidateName">ACTUAL USER: AHMED KHAN</span>
+            </div>
+          </div>
+
+          <!-- Interactive Neural Canvas -->
+          <canvas id="neuralNetworkCanvas" class="neural-canvas"></canvas>
+
+          <div class="visualizer-hud-footer">
+            <div class="legend-items">
+              <div class="legend-item">
+                <span class="legend-dot skill-dot"></span>
+                <span>Student Skills</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot latent-dot"></span>
+                <span>Latent Neural Weights</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot job-dot"></span>
+                <span>Target Career Synergy</span>
+              </div>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted);">
+              Hover nodes to trace synaptic flow • Click career node to inspect
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Recommendations Section -->
+        <section class="recommendations-section" id="recommendationsSection">
+          <div class="recommendations-header-row">
+            <div>
+              <h2><span>🎯</span> AI-Matched Career Opportunities</h2>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                Ranked by multidimensional vector similarity, skill gap feasibility, and projected industry growth.
+              </p>
+            </div>
+            <span class="job-count-badge" id="jobCountBadge">6 Neural Matches</span>
+          </div>
+
+          <!-- Category Filter Tabs & Live Web Feed Toggle -->
+          <div class="filter-bar-row">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="category-filter-btn active" data-filter="all">All Disciplines</button>
+              <button class="category-filter-btn" data-filter="AI">AI & Machine Learning</button>
+              <button class="category-filter-btn" data-filter="Engineering">Software Systems</button>
+              <button class="category-filter-btn" data-filter="Cloud">Cloud & Infrastructure</button>
+              <button class="category-filter-btn" data-filter="Product">Product & Strategy</button>
+            </div>
+
+            <button class="category-filter-btn live-jobs-toggle-btn" id="liveJobsToggleBtn">
+              <span class="live-indicator-dot"></span> 🌐 Fetch Real-Time Web Jobs
+            </button>
+          </div>
+
+          <!-- Job Cards Dynamic Grid -->
+          <div class="job-cards-grid" id="jobCardsGrid">
+            <!-- Dynamically populated job cards -->
+          </div>
+        </section>
+
+      </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         SYNAPSECAREER REAL-TIME JOB PORTAL FOOTER GATEWAY
+         Direct links and live search connecting to original job portal websites
+         ========================================================================== -->
+    <footer class="synapse-portal-footer" id="synapsePortalFooter">
+      <div class="footer-container">
+
+        <!-- Top Section: Interactive Job Search & Live Launch Hub -->
+        <div class="footer-gateway-header">
+          <div class="footer-header-content">
+            <div class="footer-badge-row">
+              <span class="hud-pill footer-live-pill">
+                <span class="live-indicator-dot"></span> LIVE PORTAL GATEWAY • REAL-TIME REDIRECTION
+              </span>
+              <span class="footer-telemetry-chip">
+                <span class="pulse-ring"></span> 8 OFFICIAL JOB PORTALS CONNECTED
+              </span>
+            </div>
+            <h2 class="footer-main-title">
+              Official Job Portal Gateway & Real-Time Links
+            </h2>
+            <p class="footer-main-desc">
+              Explore current live job openings and apply directly on original job portals. Search across top global
+              hiring engines with one click.
+            </p>
+          </div>
+
+          <!-- Real-Time Portal Search Console -->
+          <div class="footer-search-console">
+            <div class="footer-search-bar-wrap">
+              <div class="footer-search-input-box">
+                <span class="footer-search-icon">🔍</span>
+                <input type="text" id="footerJobSearchInput" class="footer-search-input"
+                  placeholder="Enter role e.g. AI Engineer, Full Stack, Data Scientist, Python..." autocomplete="off" />
+                <button type="button" class="footer-search-clear-btn" id="footerSearchClearBtn" title="Clear input"
+                  style="display: none;">✕</button>
+              </div>
+
+              <!-- Destination Portal Selector Dropdown / Pills -->
+              <div class="footer-portal-select-wrap">
+                <label for="footerPortalSelect" class="footer-select-label">Portal:</label>
+                <select id="footerPortalSelect" class="footer-portal-dropdown">
+                  <option value="linkedin" selected>LinkedIn Jobs ↗</option>
+                  <option value="naukri">Naukri.com ↗</option>
+                  <option value="indeed">Indeed India ↗</option>
+                  <option value="google">Google Careers ↗</option>
+                  <option value="glassdoor">Glassdoor Jobs ↗</option>
+                  <option value="internshala">Internshala (Freshers) ↗</option>
+                  <option value="wellfound">Wellfound (Startups) ↗</option>
+                  <option value="foundit">Foundit (Monster) ↗</option>
+                </select>
+              </div>
+
+              <!-- Launch Button -->
+              <button type="button" class="footer-launch-btn" id="footerLaunchSearchBtn">
+                <span>⚡ Launch on Portal</span>
+                <span class="external-arrow">↗</span>
+              </button>
+            </div>
+
+            <!-- Instant 1-Click Search Quick Chips -->
+            <div class="footer-quick-chips-row">
+              <span class="quick-chips-label">Quick Search:</span>
+              <button type="button" class="footer-quick-chip" data-query="Software Engineer" data-portal="linkedin">💼
+                Software Engineer</button>
+              <button type="button" class="footer-quick-chip" data-query="Full Stack Developer" data-portal="naukri">⚡
+                Full Stack</button>
+              <button type="button" class="footer-quick-chip" data-query="AI Machine Learning Engineer"
+                data-portal="indeed">🤖 AI / ML Engineer</button>
+              <button type="button" class="footer-quick-chip" data-query="Data Scientist" data-portal="glassdoor">📊
+                Data Scientist</button>
+              <button type="button" class="footer-quick-chip" data-query="Cloud DevOps Engineer" data-portal="google">☁️
+                Cloud / DevOps</button>
+              <button type="button" class="footer-quick-chip" data-query="Fresher Software Developer"
+                data-portal="internshala">🎓 Fresher Roles</button>
+              <button type="button" class="footer-quick-chip" data-query="Founding Engineer" data-portal="wellfound">🚀
+                Startup Roles</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Section: Official Top Job Portals Grid (Original Websites) -->
+        <div class="footer-portals-section">
+          <div class="footer-subheading-wrap">
+            <h3 class="footer-subheading">
+              <span class="subheading-icon">🌐</span> Verified Official Job Portals
+            </h3>
+            <span class="footer-subheading-tag">Direct Original Websites • Safe & Verified</span>
+          </div>
+
+          <div class="footer-portals-grid">
+            <!-- Portal 1: LinkedIn Jobs -->
+            <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer"
+              class="portal-card linkedin-card" id="portalCardLinkedIn">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-linkedin">
+                  <svg class="portal-logo-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z" />
+                  </svg>
+                  <span class="portal-brand-name">LinkedIn Jobs</span>
+                </div>
+                <span class="portal-live-tag">🟢 450K+ Tech Jobs</span>
+              </div>
+              <p class="portal-card-desc">
+                World's #1 professional network. 1-Click Apply, direct recruiter messaging, and verified corporate
+                hiring.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open LinkedIn Jobs Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 2: Naukri.com -->
+            <a href="https://www.naukri.com/it-jobs" target="_blank" rel="noopener noreferrer"
+              class="portal-card naukri-card" id="portalCardNaukri">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-naukri">
+                  <span class="portal-icon-symbol">💼</span>
+                  <span class="portal-brand-name">Naukri.com</span>
+                </div>
+                <span class="portal-live-tag tag-emerald">🟢 India's #1 IT Portal</span>
+              </div>
+              <p class="portal-card-desc">
+                Largest tech recruitment hub in India. High-volume hiring for IT giants, MNCs, fintechs & Indian
+                unicorns.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Naukri IT Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 3: Indeed India -->
+            <a href="https://in.indeed.com/" target="_blank" rel="noopener noreferrer" class="portal-card indeed-card"
+              id="portalCardIndeed">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-indeed">
+                  <span class="portal-icon-symbol">🎯</span>
+                  <span class="portal-brand-name">Indeed India</span>
+                </div>
+                <span class="portal-live-tag">🟢 Millions of Listings</span>
+              </div>
+              <p class="portal-card-desc">
+                Comprehensive worldwide search aggregator. Transparent salaries, employee feedback, and simple direct
+                applications.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Indeed Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 4: Glassdoor -->
+            <a href="https://www.glassdoor.co.in/Job/index.htm" target="_blank" rel="noopener noreferrer"
+              class="portal-card glassdoor-card" id="portalCardGlassdoor">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-glassdoor">
+                  <span class="portal-icon-symbol">🚪</span>
+                  <span class="portal-brand-name">Glassdoor</span>
+                </div>
+                <span class="portal-live-tag tag-emerald">🟢 Salary & Reviews</span>
+              </div>
+              <p class="portal-card-desc">
+                Authentic company culture reviews, verified interview experiences, salary insights & direct job
+                applications.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Glassdoor Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 5: Internshala -->
+            <a href="https://internshala.com/jobs/" target="_blank" rel="noopener noreferrer"
+              class="portal-card internshala-card" id="portalCardInternshala">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-internshala">
+                  <span class="portal-icon-symbol">🎓</span>
+                  <span class="portal-brand-name">Internshala</span>
+                </div>
+                <span class="portal-live-tag tag-gold">🟢 Freshers & Students</span>
+              </div>
+              <p class="portal-card-desc">
+                Premier platform for students & fresh graduates. Paid engineering internships and high-growth
+                entry-level jobs.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Internshala Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 6: Wellfound (AngelList) -->
+            <a href="https://wellfound.com/jobs" target="_blank" rel="noopener noreferrer"
+              class="portal-card wellfound-card" id="portalCardWellfound">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-wellfound">
+                  <span class="portal-icon-symbol">🚀</span>
+                  <span class="portal-brand-name">Wellfound</span>
+                </div>
+                <span class="portal-live-tag tag-purple">🟢 Top Tech Startups</span>
+              </div>
+              <p class="portal-card-desc">
+                Direct hiring with VC-backed tech founders. High-equity packages, remote AI roles, and transparent
+                equity terms.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Wellfound Portal</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 7: Google Careers -->
+            <a href="https://careers.google.com/jobs/results/" target="_blank" rel="noopener noreferrer"
+              class="portal-card google-card" id="portalCardGoogle">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-google">
+                  <svg class="portal-logo-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M21.35 11.1h-9.17v2.73h5.27c-.23 1.2-1.39 3.5-5.27 3.5-3.17 0-5.75-2.6-5.75-5.83s2.58-5.83 5.75-5.83c1.8 0 3.01.77 3.7 1.43l2.16-2.08C22.42 3.8 19.98 2.5 16.5 2.5 10.7 2.5 6 7.2 6 13s4.7 10.5 10.5 10.5c6.05 0 10.05-4.25 10.05-10.23 0-.69-.07-1.17-.15-1.67z" />
+                  </svg>
+                  <span class="portal-brand-name">Google Careers</span>
+                </div>
+                <span class="portal-live-tag">🟢 Tier-1 Tech Core</span>
+              </div>
+              <p class="portal-card-desc">
+                Official Google hiring portal. Explore worldwide engineering, AI research, distributed systems and
+                product roles.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Google Careers</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+
+            <!-- Portal 8: Microsoft Careers -->
+            <a href="https://careers.microsoft.com/professionals/us/en/search-results" target="_blank"
+              rel="noopener noreferrer" class="portal-card microsoft-card" id="portalCardMicrosoft">
+              <div class="portal-card-glow"></div>
+              <div class="portal-card-top">
+                <div class="portal-brand-badge brand-microsoft">
+                  <span class="portal-icon-symbol">🪟</span>
+                  <span class="portal-brand-name">Microsoft Careers</span>
+                </div>
+                <span class="portal-live-tag tag-cyan">🟢 Cloud & OpenAI</span>
+              </div>
+              <p class="portal-card-desc">
+                Official Microsoft jobs hub. Azure cloud architects, AI engineers, Windows core, and distributed systems
+                openings.
+              </p>
+              <div class="portal-card-action">
+                <span class="portal-action-text">Open Microsoft Careers</span>
+                <span class="portal-arrow-icon">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Section: Current Live Job Openings (Direct Apply on Original Sites) -->
+        <div class="footer-live-openings-section">
+          <div class="footer-subheading-wrap">
+            <h3 class="footer-subheading">
+              <span class="subheading-icon">🔥</span> Current Live Openings (Direct Official Links)
+            </h3>
+            <span class="footer-subheading-tag">Actively Hiring • Click to Open Official Application</span>
+          </div>
+
+          <div class="footer-jobs-stream-grid">
+            <!-- Live Job 1: Google Cloud -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-high">TIER-1 CORE</span>
+                <span class="footer-job-portal-badge google-tag">Google Careers ↗</span>
+              </div>
+              <h4 class="footer-job-title">Senior AI & ML Solutions Engineer</h4>
+              <div class="footer-job-company">🏢 Google Cloud • Bangalore / Hybrid</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹45L - ₹65L PA</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +38% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">Python</span>
+                <span class="footer-tag">TensorFlow</span>
+                <span class="footer-tag">Vertex AI</span>
+                <span class="footer-tag">GCP</span>
+              </div>
+              <a href="https://careers.google.com/jobs/results/?q=software%20engineer" target="_blank"
+                rel="noopener noreferrer" class="footer-job-apply-btn">
+                <span>Apply on Google Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Live Job 2: Microsoft -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-high">ENTERPRISE CLOUD</span>
+                <span class="footer-job-portal-badge microsoft-tag">Microsoft Careers ↗</span>
+              </div>
+              <h4 class="footer-job-title">Software Engineer II - Azure Distributed Systems</h4>
+              <div class="footer-job-company">🏢 Microsoft • Hyderabad / Noida</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹38L - ₹52L PA</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +32% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">Golang</span>
+                <span class="footer-tag">Kubernetes</span>
+                <span class="footer-tag">Distributed Systems</span>
+                <span class="footer-tag">C#</span>
+              </div>
+              <a href="https://careers.microsoft.com/professionals/us/en/search-results?keywords=software%20engineer"
+                target="_blank" rel="noopener noreferrer" class="footer-job-apply-btn">
+                <span>Apply on Microsoft Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Live Job 3: Amazon AWS -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-high">CLOUD INFRA</span>
+                <span class="footer-job-portal-badge amazon-tag">Amazon Jobs ↗</span>
+              </div>
+              <h4 class="footer-job-title">Software Development Engineer II (SDE II)</h4>
+              <div class="footer-job-company">🏢 Amazon AWS • Bangalore / Pune</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹40L - ₹56L PA</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +29% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">Java</span>
+                <span class="footer-tag">AWS ECS</span>
+                <span class="footer-tag">System Design</span>
+                <span class="footer-tag">DynamoDB</span>
+              </div>
+              <a href="https://amazon.jobs/en/search?base_query=software+development+engineer" target="_blank"
+                rel="noopener noreferrer" class="footer-job-apply-btn">
+                <span>Apply on Amazon Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Live Job 4: NVIDIA -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-high">GPU & AI ACCEL</span>
+                <span class="footer-job-portal-badge nvidia-tag">NVIDIA Portal ↗</span>
+              </div>
+              <h4 class="footer-job-title">Deep Learning Systems Engineer (CUDA/TensorRT)</h4>
+              <div class="footer-job-company">🏢 NVIDIA • Pune / Bangalore / Remote</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹42L - ₹68L PA</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +45% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">CUDA</span>
+                <span class="footer-tag">C++</span>
+                <span class="footer-tag">PyTorch</span>
+                <span class="footer-tag">TensorRT</span>
+              </div>
+              <a href="https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite" target="_blank"
+                rel="noopener noreferrer" class="footer-job-apply-btn">
+                <span>Apply on NVIDIA Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Live Job 5: Zomato on Naukri -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-mid">UNICORN TECH</span>
+                <span class="footer-job-portal-badge naukri-tag">Naukri Verified ↗</span>
+              </div>
+              <h4 class="footer-job-title">Senior Platform & Backend Engineer</h4>
+              <div class="footer-job-company">🏢 Zomato / Blinkit • Gurugram NCR</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹28L - ₹45L PA</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +35% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">Go</span>
+                <span class="footer-tag">Redis</span>
+                <span class="footer-tag">Kafka</span>
+                <span class="footer-tag">Microservices</span>
+              </div>
+              <a href="https://www.naukri.com/zomato-jobs" target="_blank" rel="noopener noreferrer"
+                class="footer-job-apply-btn">
+                <span>Apply on Naukri Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Live Job 6: Top Startups on Wellfound -->
+            <div class="footer-job-card">
+              <div class="footer-job-badge-row">
+                <span class="tier-pill tier-high">AI STARTUP</span>
+                <span class="footer-job-portal-badge wellfound-tag">Wellfound Jobs ↗</span>
+              </div>
+              <h4 class="footer-job-title">Full Stack AI Product Engineer</h4>
+              <div class="footer-job-company">🏢 Stealth GenAI Startup • Remote / Hybrid</div>
+              <div class="footer-job-meta">
+                <span>💵 ₹32L - ₹50L PA + Equity</span>
+                <span class="dot-sep">•</span>
+                <span>📈 +52% Growth</span>
+              </div>
+              <div class="footer-job-tags">
+                <span class="footer-tag">Next.js</span>
+                <span class="footer-tag">TypeScript</span>
+                <span class="footer-tag">LangChain</span>
+                <span class="footer-tag">FastAPI</span>
+              </div>
+              <a href="https://wellfound.com/jobs" target="_blank" rel="noopener noreferrer"
+                class="footer-job-apply-btn">
+                <span>Apply on Wellfound Official Portal</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Telemetry & Navigation Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-brand-meta">
+            <div class="footer-brand-logo-text">
+              <span class="footer-logo-spark">⚡</span>
+              <span class="footer-brand-title">SYNAPSECAREER</span>
+              <span class="footer-brand-version">v4.8 QUANTUM</span>
+            </div>
+            <p class="footer-disclaimer">
+              SynapseCareer AI automatically generates neural career pathways. External portal links open in a secure
+              new tab directly to the original job portal or company careers site.
+            </p>
+          </div>
+
+          <div class="footer-quick-links-group">
+            <div class="footer-links-col">
+              <span class="footer-links-heading">Major Portals</span>
+              <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer">LinkedIn Jobs ↗</a>
+              <a href="https://www.naukri.com/it-jobs" target="_blank" rel="noopener noreferrer">Naukri IT ↗</a>
+              <a href="https://in.indeed.com/" target="_blank" rel="noopener noreferrer">Indeed India ↗</a>
+              <a href="https://www.glassdoor.co.in/Job/index.htm" target="_blank" rel="noopener noreferrer">Glassdoor
+                ↗</a>
+            </div>
+
+            <div class="footer-links-col">
+              <span class="footer-links-heading">Startups & Freshers</span>
+              <a href="https://internshala.com/jobs/" target="_blank" rel="noopener noreferrer">Internshala Jobs ↗</a>
+              <a href="https://wellfound.com/jobs" target="_blank" rel="noopener noreferrer">Wellfound (AngelList) ↗</a>
+              <a href="https://careers.google.com/jobs/results/" target="_blank" rel="noopener noreferrer">Google
+                Careers ↗</a>
+              <a href="https://careers.microsoft.com/professionals/us/en/search-results" target="_blank"
+                rel="noopener noreferrer">Microsoft Careers ↗</a>
+            </div>
+
+            <div class="footer-links-col">
+              <span class="footer-links-heading">Neural Platform</span>
+              <a href="#mainHeader">▲ Back to Top</a>
+              <a href="javascript:void(0)" id="footerAriaTrigger">💬 Talk to Aria AI</a>
+              <a href="javascript:void(0)" id="footerATSOpenTrigger">📝 ATS Resume Wizard</a>
+              <a href="javascript:void(0)" id="footerHealthStatusTrigger">🟢 Backend Health: Port 5000</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright-row">
+          <span>© 2026 SynapseCareer Neural Intelligence Platform. All External Brand Marks Belong to Their Respective
+            Owners.</span>
+          <div class="footer-status-pill">
+            <span class="live-indicator-dot"></span>
+            <span>External Redirection: <strong>Active & Verified</strong></span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Career Pathway Roadmap Modal -->
+    <div class="modal-overlay" id="pathwayModal">
+      <div class="modal-container" id="pathwayModalContent">
+        <!-- Dynamically rendered roadmap content -->
+      </div>
+    </div>
+
+    <!-- Evolving Resume Optimizer Modal -->
+    <div class="modal-overlay" id="resumeOptimizerModal">
+      <div class="modal-container" style="max-width: 820px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">LIVE NEURAL ATS OPTIMIZER</span>
+            <h2 style="font-size: 1.5rem; margin-top: 0.35rem; color: #ffffff;">Dynamic Evolving Resume</h2>
+            <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace;">Real-time
+              AI Keyword Injection & Suitability Optimization</p>
+          </div>
+          <button class="modal-close-btn" id="closeOptimizerModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <!-- Visualizer Banner with Generated Asset -->
+          <div class="optimizer-header-banner">
+            <img src="assets/resume_optimizer.jpg" alt="AI Resume Optimizer Interface" class="optimizer-banner-img">
+            <div class="optimizer-banner-overlay">
+              <div>
+                <span class="hud-pill" style="background: rgba(0, 0, 0, 0.7);"><span class="live-indicator-dot"></span>
+                  ATS COMPATIBILITY ENGINE</span>
+              </div>
+              <span
+                style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--neon-emerald);">AUTONOMOUS
+                TUNING ACTIVE</span>
+            </div>
+          </div>
+
+          <!-- Target Role Dropdown Selector -->
+          <div style="margin-bottom: 1.25rem;">
+            <label class="archetype-selector-label">Target Career Role to Optimize Against:</label>
+            <select id="optimizerRoleSelect"
+              style="width: 100%; background: rgba(5, 8, 17, 0.9); border: 1px solid var(--neon-cyan); color: #ffffff; padding: 0.75rem 1rem; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.95rem;">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Before vs After Score Comparison -->
+          <div class="optimizer-score-comparison">
+            <div class="score-box">
+              <span class="score-label">Baseline Match</span>
+              <span class="score-val before" id="optBeforeScore">64%</span>
+            </div>
+            <div class="score-arrow">➔</div>
+            <div class="score-box">
+              <span class="score-label">AI Tailored Match</span>
+              <span class="score-val after" id="optAfterScore">97%</span>
+            </div>
+          </div>
+
+          <!-- Injected ATS Keywords -->
+          <div style="margin-bottom: 1.25rem;">
+            <label class="archetype-selector-label">Injected ATS High-Frequency Keywords:</label>
+            <div id="optKeywordsList" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+          </div>
+
+          <!-- Dynamic Tailored Resume Preview Sheet -->
+          <div id="optTailoredResumeBody"></div>
+
+          <!-- Action Bar -->
+          <div style="display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 1.5rem;">
+            <button class="parse-submit-btn" id="copyOptimizedResumeBtn" style="width: auto; padding: 0.75rem 1.5rem;">
+              📋 Copy Tailored Text
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1-Click Automated AI Application Modal -->
+    <div class="modal-overlay" id="autoApplyModal">
+      <div class="modal-container" id="autoApplyContent" style="max-width: 650px;">
+        <!-- Dynamically rendered handshake animation content -->
+      </div>
+    </div>
+
+    <!-- AI Technical Mock Interviewer Simulator Modal (Elara-AI) -->
+    <div class="modal-overlay" id="mockInterviewModal">
+      <div class="modal-container" style="max-width: 840px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">ELARA-AI TECHNICAL SIMULATOR</span>
+            <h2 style="font-size: 1.45rem; margin-top: 0.35rem; color: #ffffff;" id="interviewRoleTitle">AI Engineer
+              Mock Interview</h2>
+            <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace;">Real-time
+              Voice & Technical Rubric Assessment</p>
+          </div>
+          <button class="modal-close-btn" id="closeInterviewModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <!-- Visual Asset Banner -->
+          <div class="interviewer-header-banner">
+            <img src="assets/mock_interviewer.jpg" alt="AI Technical Interviewer" class="interviewer-banner-img">
+            <div class="interviewer-banner-overlay">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div class="interview-waveform" id="interviewWaveform">
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                </div>
+                <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: #ffffff;">ELARA-AI
+                  INTERVIEWER ACTIVE</span>
+              </div>
+              <button class="aria-voice-btn" id="speakQuestionBtn"
+                style="background: rgba(0, 240, 255, 0.2); color: #ffffff; border-color: var(--neon-cyan);">
+                🔊 Read Question
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Display Card -->
+          <div class="question-display-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span id="interviewQuestionNumber"
+                style="font-size: 0.75rem; color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace;">Question
+                1 of 3</span>
+              <span id="interviewTopicBadge" class="tier-pill tier-high" style="font-size: 0.7rem;">⚡ TOPIC: NEURAL
+                ARCHITECTURE</span>
+            </div>
+            <div class="question-text" id="interviewQuestionText">
+              How do you diagnose and mitigate overfitting in a deep transformer model when working with limited
+              domain-specific training data?
+            </div>
+          </div>
+
+          <!-- Answer Input Area -->
+          <div style="margin-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label class="archetype-selector-label" style="margin-bottom: 0;">Your Technical Response / Architectural
+                Solution:</label>
+              <button class="btn-voice-record" id="recordAnswerVoiceBtn">
+                🎙️ Speak Answer (Mic)
+              </button>
+            </div>
+            <textarea class="resume-textarea" id="interviewAnswerInput" style="min-height: 120px;"
+              placeholder="Explain your approach, engineering trade-offs, algorithms, and libraries (e.g., PyTorch, regularization, latency benchmarks)..."></textarea>
+          </div>
+
+          <!-- Navigation & Submit Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="aria-nav-btn" id="prevQuestionBtn">◀ Prev</button>
+              <button class="aria-nav-btn" id="nextQuestionBtn">Next Q ➔</button>
+            </div>
+            <button class="parse-submit-btn" id="submitInterviewAnswerBtn"
+              style="width: auto; padding: 0.65rem 1.4rem;">
+              ⚡ Evaluate Response with AI
+            </button>
+          </div>
+
+          <!-- AI Evaluation Feedback Report -->
+          <div id="interviewFeedbackBox" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PLACEMENT MCQ QUIZ MODAL — Holographic Skill Assessment Engine
+         ========================================================================= -->
+    <div class="modal-overlay" id="placementMCQModal">
+      <div class="modal-container mcq-modal-container" style="max-width: 860px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">PLACEMENT PREPARATION</span>
+            <h2 style="font-size:1.45rem;margin-top:0.35rem;color:#ffffff;">Technical Skill Assessment</h2>
+            <p style="font-size:0.82rem;color:var(--neon-cyan);font-family:'JetBrains Mono',monospace;">
+              120 MCQs · 6 Skills · 20 Questions Each · Timed Assessment
+            </p>
+          </div>
+          <button class="modal-close-btn" id="closePlacementMCQBtn">✕</button>
+        </div>
+        <div class="modal-body mcq-modal-body" id="mcqModalBody" style="padding:1.5rem;min-height:420px;">
+          <!-- Populated by PlacementMCQ JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Holographic Job Market Analytics & Salary Radar Modal -->
+    <div class="modal-overlay" id="marketAnalyticsModal">
+      <div class="modal-container" style="max-width: 860px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">GLOBAL MARKET INTELLIGENCE</span>
+            <h2 style="font-size: 1.45rem; margin-top: 0.35rem; color: #ffffff;">Talent Vector & Salary Analytics</h2>
+            <p style="font-size: 0.82rem; color: var(--neon-gold); font-family: 'JetBrains Mono', monospace;">Live
+              Industry Demand vs Student Telemetry Web</p>
+          </div>
+          <button class="modal-close-btn" id="closeAnalyticsModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <!-- Visual Asset Banner -->
+          <div class="interviewer-header-banner">
+            <img src="assets/market_analytics.jpg" alt="AI Job Market Analytics Console" class="interviewer-banner-img">
+            <div class="interviewer-banner-overlay">
+              <div>
+                <span class="hud-pill" style="background: rgba(0, 0, 0, 0.7);"><span class="live-indicator-dot"></span>
+                  GLOBAL TALENT INDEX</span>
+              </div>
+              <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--neon-cyan);">LIVE
+                MARKET BENCHMARK (2026)</span>
+            </div>
+          </div>
+
+          <!-- Radar Chart & Salary Projection Grid -->
+          <div class="analytics-grid-layout">
+            <!-- HTML5 Canvas Radar Spider Web -->
+            <div class="radar-canvas-box">
+              <h4
+                style="font-size: 0.85rem; color: #ffffff; margin-bottom: 0.5rem; text-align: center; font-family: 'JetBrains Mono', monospace;">
+                SKILL RADAR (STUDENT VS MARKET)
+              </h4>
+              <canvas id="radarAnalyticsCanvas" class="radar-canvas-element"></canvas>
+              <div
+                style="display: flex; gap: 1rem; font-size: 0.72rem; margin-top: 0.5rem; font-family: 'JetBrains Mono', monospace;">
+                <span style="color: var(--neon-emerald);">■ Your Skill Tensor</span>
+                <span style="color: var(--neon-gold);">-- Industry Benchmark</span>
+              </div>
+            </div>
+
+            <!-- Real-Time Projected Salary & Industry Multipliers -->
+            <div class="salary-projections-card">
+              <h4 style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.25rem;">Market Valuation & Projections
+              </h4>
+
+              <div class="stat-projection-row">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Estimated Entry-to-Mid Base:</span>
+                <strong id="marketBaseSalary"
+                  style="color: var(--neon-emerald); font-family: 'JetBrains Mono', monospace; font-size: 1.25rem;">$152k</strong>
+              </div>
+
+              <div class="stat-projection-row">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Top-Tier Senior Ceiling:</span>
+                <strong id="marketCeilingSalary"
+                  style="color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace; font-size: 1.25rem;">$220k</strong>
+              </div>
+
+              <div class="stat-projection-row">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Candidate Market Placement:</span>
+                <strong id="marketPercentile"
+                  style="color: var(--neon-gold); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace;">Top 14%
+                  (86th Percentile)</strong>
+              </div>
+
+              <div
+                style="background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 8px; padding: 0.75rem; font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45;">
+                ⚡ <em>Pro Tip:</em> Increasing PyTorch & Cloud coefficients past 85% unlocks eligibility for Tier 1
+                Quantum & ML Lead compensation brackets.
+              </div>
+            </div>
+          </div>
+
+          <!-- Dossier Export Button -->
+          <div style="display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 1rem;">
+            <button class="parse-submit-btn" id="exportCareerReportBtn"
+              style="width: auto; padding: 0.75rem 1.6rem; border-color: var(--neon-gold); color: #ffffff;">
+              📥 Download Career Dossier (.txt)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aurora AI Career Copilot & Strategy Mentor Modal -->
+    <div class="modal-overlay" id="careerCopilotModal">
+      <div class="modal-container" style="max-width: 780px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high" style="border-color: #d946ef; color: #f0abfc;">AURORA NEURAL
+              COPILOT</span>
+            <h2 style="font-size: 1.45rem; margin-top: 0.35rem; color: #ffffff;">AI Career Mentor & Strategic Advisor
+            </h2>
+            <p style="font-size: 0.82rem; color: #f0abfc; font-family: 'JetBrains Mono', monospace;">Instant Contextual
+              Advice on Projects, Salary, & Skill Acceleration</p>
+          </div>
+          <button class="modal-close-btn" id="closeCopilotModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <!-- Visual Asset Banner -->
+          <div class="interviewer-header-banner" style="height: 170px;">
+            <img src="assets/career_copilot.jpg" alt="Aurora AI Career Copilot" class="interviewer-banner-img">
+            <div class="interviewer-banner-overlay">
+              <div>
+                <span class="hud-pill" style="background: rgba(0, 0, 0, 0.7);"><span class="live-indicator-dot"
+                    style="background: #d946ef; box-shadow: 0 0 10px #d946ef;"></span> AURORA NEURAL ADVISOR</span>
+              </div>
+              <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: #f0abfc;">REAL-TIME
+                COPILOT ONLINE</span>
+            </div>
+          </div>
+
+          <!-- Chat Messages Container -->
+          <div class="copilot-chat-container">
+            <div class="copilot-messages-box" id="copilotMessagesList">
+              <!-- Dynamically populated messages -->
+            </div>
+
+            <!-- Suggestion Prompt Chips -->
+            <div class="copilot-chips-row">
+              <button class="copilot-chip"
+                data-copilot-prompt="What high-yield projects should I build for my portfolio?">
+                💡 High-Yield Projects
+              </button>
+              <button class="copilot-chip" data-copilot-prompt="What is my projected market salary bracket?">
+                💵 Market Salary
+              </button>
+              <button class="copilot-chip" data-copilot-prompt="How should I prepare for my technical interview?">
+                🎯 Interview Prep
+              </button>
+              <button class="copilot-chip" data-copilot-prompt="What skill gaps should I prioritize closing?">
+                ⚡ Bridge Skill Gaps
+              </button>
+            </div>
+
+            <!-- Chat Input Row -->
+            <div class="copilot-input-row">
+              <input type="text" class="copilot-input-field" id="copilotChatInput"
+                placeholder="Ask Aurora about portfolio projects, salary negotiation, or technical roadmaps..." />
+              <button class="parse-submit-btn" id="copilotSendBtn"
+                style="width: auto; padding: 0.75rem 1.4rem; background: linear-gradient(135deg, rgba(217, 70, 239, 0.4), rgba(0, 240, 255, 0.4));">
+                Send ➔
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Authentication Modal (Login / Register) -->
+    <div class="modal-overlay" id="userAuthModal">
+      <div class="modal-container" style="max-width: 480px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">CANDIDATE TELEMETRY ACCESS</span>
+            <h2 style="font-size: 1.35rem; margin-top: 0.35rem; color: #ffffff;">Synapse Space Access</h2>
+          </div>
+          <button class="modal-close-btn" id="closeAuthModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <div class="auth-tabs-row">
+            <button class="auth-tab-btn active" id="tabAuthLogin">Sign In</button>
+            <button class="auth-tab-btn" id="tabAuthRegister">New Registration</button>
+          </div>
+
+          <!-- CREDENTIALS VIEW (shown by default) -->
+          <div id="authCredentialsView">
+            <form id="userAuthForm">
+              <div class="wizard-form-group" id="authNameGroup" style="display: none;">
+                <label>Full Name</label>
+                <input type="text" class="wizard-form-input" id="authNameInput" placeholder="e.g. Maya Chen" />
+              </div>
+
+              <div class="wizard-form-group">
+                <label>Academic / Work Email</label>
+                <input type="email" class="wizard-form-input" id="authEmailInput" placeholder="name@university.edu"
+                  required />
+              </div>
+
+              <div class="wizard-form-group">
+                <label>Mobile Number <span style="color:var(--text-muted); font-size:0.72rem;">(Optional – for SMS
+                    OTP)</span></label>
+                <input type="tel" class="wizard-form-input" id="authPhoneInput"
+                  placeholder="10-digit Indian number e.g. 9876543210" maxlength="10" pattern="[0-9]{10}" />
+              </div>
+
+              <p
+                style="font-size:0.78rem; color:var(--text-secondary); margin: 0.3rem 0 0.8rem; font-family:'JetBrains Mono',monospace;">
+                🔐 A dynamic OTP will be sent to verify your identity
+              </p>
+
+              <button type="submit" class="parse-submit-btn" id="authSubmitBtn"
+                style="margin-top: 0.5rem; width: 100%;">
+                ⚡ Send Verification OTP
+              </button>
+            </form>
+          </div>
+
+          <!-- OTP VERIFICATION VIEW (rendered dynamically by JS) -->
+          <div id="authOtpView" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4-Step Interactive AI Resume Builder Wizard Modal -->
+    <div class="modal-overlay" id="resumeWizardModal">
+      <div class="modal-container" style="max-width: 820px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">AI RESUME STUDIO</span>
+            <h2 style="font-size: 1.45rem; margin-top: 0.35rem; color: #ffffff;">Interactive Resume Builder Wizard</h2>
+            <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: 'JetBrains Mono', monospace;">
+              Step-by-Step Structured Profile & Impact Generator</p>
+          </div>
+          <button class="modal-close-btn" id="closeWizardModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.5rem;">
+          <!-- Visual Asset Banner -->
+          <div class="interviewer-header-banner" style="height: 160px;">
+            <img src="assets/resume_builder_studio.jpg" alt="AI Resume Builder Studio" class="interviewer-banner-img">
+            <div class="interviewer-banner-overlay">
+              <div>
+                <span class="hud-pill" style="background: rgba(0, 0, 0, 0.7);"><span class="live-indicator-dot"></span>
+                  RESUME STUDIO v3.2</span>
+              </div>
+              <span
+                style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--neon-emerald);">AUTONOMOUS
+                IMPACT POLISH</span>
+            </div>
+          </div>
+
+          <!-- Step Progression Header -->
+          <div class="wizard-steps-header">
+            <div class="wiz-step-pill active" data-step="1">1. Personal Info</div>
+            <div class="wiz-step-pill" data-step="2">2. Education</div>
+            <div class="wiz-step-pill" data-step="3">3. Experience</div>
+            <div class="wiz-step-pill" data-step="4">4. Final Sync</div>
+          </div>
+
+          <!-- Step 1: Personal Info -->
+          <div id="wizStep1">
+            <div class="wizard-form-group">
+              <label>Full Name</label>
+              <input type="text" class="wizard-form-input" id="wizName" value="Maya Chen" />
+            </div>
+            <div class="wizard-form-group">
+              <label>Email & Contact</label>
+              <input type="email" class="wizard-form-input" id="wizEmail" value="maya.chen@neural.edu" />
+            </div>
+            <div class="wizard-form-group">
+              <label>Target Career Discipline</label>
+              <select class="wizard-form-input" id="wizTargetRole">
+                <option>AI & Machine Learning Engineer</option>
+                <option>Distributed Backend & Cloud Engineer</option>
+                <option>Data Platform & Analytics Engineer</option>
+                <option>Full-Stack Systems Architect</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 2: Education -->
+          <div id="wizStep2" style="display: none;">
+            <div class="wizard-form-group">
+              <label>University / Institution</label>
+              <input type="text" class="wizard-form-input" id="wizUni" value="Stanford University" />
+            </div>
+            <div class="wizard-form-group">
+              <label>Degree & Major</label>
+              <input type="text" class="wizard-form-input" id="wizDegree" value="B.S. Computer Science (AI Track)" />
+            </div>
+            <div class="wizard-form-group">
+              <label>Graduation Year</label>
+              <input type="text" class="wizard-form-input" id="wizGradYear" value="2026" />
+            </div>
+          </div>
+
+          <!-- Step 3: Experience & Impact Polish -->
+          <div id="wizStep3" style="display: none;">
+            <div class="wizard-form-group">
+              <label>Company / Project Name</label>
+              <input type="text" class="wizard-form-input" id="wizCompany" value="NovaTech Dynamics" />
+            </div>
+            <div class="wizard-form-group">
+              <label>Role / Position Title</label>
+              <input type="text" class="wizard-form-input" id="wizJobTitle" value="AI Research Intern" />
+            </div>
+            <div class="wizard-form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <label style="margin-bottom: 0;">Impact Descriptions & Accomplishments:</label>
+                <button type="button" class="btn-ai-polish" id="aiPolishBulletsBtn">
+                  ✨ AI Polish Impact Bullets
+                </button>
+              </div>
+              <textarea class="resume-textarea" id="wizExperience"
+                style="min-height: 110px;">Implemented deep transformer models in PyTorch, reducing inference latency by 35% with quantized embeddings.</textarea>
+            </div>
+          </div>
+
+          <!-- Step 4: Final Review & Neural Sync -->
+          <div id="wizStep4" style="display: none;">
+            <h4 style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.75rem;">Verified Resume Preview:</h4>
+            <div id="wizFinalPreview"></div>
+          </div>
+
+          <!-- Wizard Action Buttons -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+            <button class="aria-nav-btn" id="wizardPrevBtn">◀ Back</button>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="aria-nav-btn" id="wizardNextBtn">Next Step ➔</button>
+              <button class="parse-submit-btn" id="syncWizardToNeuralBtn"
+                style="display: none; width: auto; padding: 0.65rem 1.5rem; background: linear-gradient(135deg, rgba(0,255,157,0.3), rgba(0,240,255,0.3));">
+                ⚡ Sync & Map to Neural Model
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Holographic AI Guide Launcher — Animated 3D Glossy Robot -->
+    <button class="aria-dock-btn" id="ariaDockBtn" title="Launch Interactive AI Guide"
+      aria-label="Aria AI Floating Guide">
+
+      <!-- ═══ ARIA 3D ROBOT RIG (Ultra-High-End Sci-Fi Character) ═══ -->
+      <div class="aria-robot" id="ariaRobotRig">
+        <!-- 0. Ambient Neon Aura Glow Behind Robot -->
+        <div class="robot-ambient-aura"></div>
+
+        <!-- 1. 3D Holographic Gyro Orbit Rings & Data Beads -->
+        <div class="robot-orbit-system">
+          <div class="orbit-ring ring-primary">
+            <div class="orbit-node node-cyan"></div>
+          </div>
+          <div class="orbit-ring ring-secondary">
+            <div class="orbit-node node-purple"></div>
+          </div>
+        </div>
+
+        <!-- 2. Top Antenna Beacon with Concentric Pulses -->
+        <div class="robot-antenna">
+          <div class="antenna-halo"></div>
+          <div class="antenna-bulb"></div>
+          <div class="antenna-ring"></div>
+          <div class="antenna-rod"></div>
+        </div>
+
+        <!-- 3. Cyber Headphones / Audio Sensor Nodes -->
+        <div class="robot-ear robot-ear-left">
+          <div class="ear-ring">
+            <div class="ear-audio-waves"><span></span><span></span><span></span></div>
+            <div class="ear-core"></div>
+          </div>
+        </div>
+        <div class="robot-ear robot-ear-right">
+          <div class="ear-ring">
+            <div class="ear-audio-waves"><span></span><span></span><span></span></div>
+            <div class="ear-core"></div>
+          </div>
+        </div>
+
+        <!-- 4. Main Ceramic Body Sphere with Studio Rim Lighting -->
+        <div class="robot-body">
+          <div class="body-gloss-sweep"></div>
+          <div class="body-gloss-secondary"></div>
+          <div class="body-rim-highlight"></div>
+          <div class="body-cyber-circuit circuit-left"></div>
+          <div class="body-cyber-circuit circuit-right"></div>
+          <div class="body-panel-line"></div>
+          <div class="body-model-label">ARIA • QUANTUM AI</div>
+
+          <!-- OLED VISOR SCREEN WITH METALLIC BEZEL & 3D GLASS REFRACTION -->
+          <div class="robot-face-bezel">
+            <div class="robot-face">
+              <!-- Holographic Hex Grid Overlay -->
+              <div class="visor-hex-grid"></div>
+              <!-- Curved Glass Specular Arc -->
+              <div class="visor-reflection"></div>
+              <div class="visor-reflection-bottom"></div>
+
+              <!-- Expressive Glowing Cyan OLED Eyes -->
+              <div class="robot-eyes">
+                <div class="robot-eye eye-left">
+                  <svg class="eye-svg" viewBox="0 0 24 30">
+                    <rect x="2" y="3" width="20" height="24" rx="10" fill="url(#eyeGrad)" />
+                    <rect x="4" y="5" width="16" height="10" rx="5" fill="#e0faff" opacity="0.85" />
+                    <circle cx="12" cy="18" r="3.2" fill="#ffffff" opacity="0.95" />
+                    <circle cx="8" cy="11" r="1.5" fill="#ffffff" opacity="0.9" />
+                    <circle cx="16" cy="12" r="1" fill="#a5f3fc" opacity="0.8" />
+                  </svg>
+                </div>
+                <div class="robot-eye eye-right">
+                  <svg class="eye-svg" viewBox="0 0 24 30">
+                    <rect x="2" y="3" width="20" height="24" rx="10" fill="url(#eyeGrad)" />
+                    <rect x="4" y="5" width="16" height="10" rx="5" fill="#e0faff" opacity="0.85" />
+                    <circle cx="12" cy="18" r="3.2" fill="#ffffff" opacity="0.95" />
+                    <circle cx="8" cy="11" r="1.5" fill="#ffffff" opacity="0.9" />
+                    <circle cx="16" cy="12" r="1" fill="#a5f3fc" opacity="0.8" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Cheerful Cyber Blush Cheeks -->
+              <div class="robot-cheeks">
+                <div class="cheek"></div>
+                <div class="cheek"></div>
+              </div>
+
+              <!-- Glowing Smile Mouth -->
+              <div class="robot-mouth">
+                <svg class="mouth-svg" viewBox="0 0 22 12">
+                  <path class="mouth-path" d="M 3,3 Q 11,11 19,3" fill="none" stroke="#00f5ff" stroke-width="3.5"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Quantum Ion Thruster with Chrome Nozzle & Plasma Flame -->
+        <div class="robot-thruster">
+          <div class="thruster-cone"></div>
+          <div class="thruster-ring"></div>
+          <div class="thruster-core-glow"></div>
+          <div class="thruster-beam-main"></div>
+          <div class="thruster-beam-outer"></div>
+        </div>
+
+        <!-- 6. Ground Sci-Fi Hologram Telemetry Circle & Soft Shadow -->
+        <div class="robot-ground-holo"></div>
+        <div class="robot-shadow"></div>
+
+        <!-- ═══ 7. SVG OVERLAY: Coordinated Arms + Interactive Hologram Tablet ═══ -->
+        <svg class="robot-arms-tablet-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="svgCyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.2" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="svgBrightGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="3.8" result="b" />
+              <feMerge>
+                <feMergeNode in="b" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8" />
+              <stop offset="60%" stop-color="#00f5ff" />
+              <stop offset="100%" stop-color="#00e5a3" />
+            </linearGradient>
+            <linearGradient id="limbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="35%" stop-color="#f2f7ff" />
+              <stop offset="70%" stop-color="#bfd6fb" />
+              <stop offset="100%" stop-color="#769ee3" />
+            </linearGradient>
+            <radialGradient id="jointGrad" cx="35%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="50%" stop-color="#c5dcf9" />
+              <stop offset="100%" stop-color="#608bd8" />
+            </radialGradient>
+            <linearGradient id="tabletGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(3,18,48,0.92)" />
+              <stop offset="50%" stop-color="rgba(12,38,88,0.85)" />
+              <stop offset="100%" stop-color="rgba(5,22,60,0.94)" />
+            </linearGradient>
+            <linearGradient id="tabletEdgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f5ff" />
+              <stop offset="50%" stop-color="#38bdf8" />
+              <stop offset="100%" stop-color="#c084fc" />
+            </linearGradient>
+            <linearGradient id="holoBeamGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+              <stop offset="0%" stop-color="rgba(0,240,255,0.45)" />
+              <stop offset="40%" stop-color="rgba(0,240,255,0.18)" />
+              <stop offset="100%" stop-color="rgba(192,132,252,0.0)" />
+            </linearGradient>
+            <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(0,240,255,0)" />
+              <stop offset="50%" stop-color="rgba(0,255,230,0.65)" />
+              <stop offset="100%" stop-color="rgba(0,240,255,0)" />
+            </linearGradient>
+            <clipPath id="tabletScreenClip">
+              <rect x="42" y="107" width="64" height="50" rx="6" />
+            </clipPath>
+          </defs>
+
+          <!-- ═══ 1. LEFT ARM (Holding Tablet from Left Side) ═══ -->
+          <g class="svg-left-arm-group">
+            <circle cx="38" cy="60" r="8.5" fill="url(#jointGrad)" />
+            <circle cx="38" cy="60" r="3.5" fill="#00f0ff" opacity="0.75" filter="url(#svgCyanGlow)" />
+            <!-- Upper arm -->
+            <path d="M 38,60 Q 28,76 26,90" stroke="url(#limbGrad)" stroke-width="10.5" stroke-linecap="round"
+              fill="none" />
+            <!-- Elbow joint -->
+            <circle cx="26" cy="90" r="5.5" fill="url(#jointGrad)" />
+            <circle cx="26" cy="90" r="2.4" fill="#00f0ff" filter="url(#svgCyanGlow)" />
+            <!-- Forearm angling in to grasp tablet -->
+            <path d="M 26,90 Q 34,105 44,115" stroke="url(#limbGrad)" stroke-width="8.5" stroke-linecap="round"
+              fill="none" />
+            <!-- Wrist joint -->
+            <circle cx="44" cy="115" r="4.8" fill="url(#jointGrad)" />
+
+            <!-- Left Fingers gripping tablet bezel firmly -->
+            <path d="M 40,108 Q 35,106 34,110 Q 33,114 38,114" stroke="url(#limbGrad)" stroke-width="3.8"
+              stroke-linecap="round" fill="none" />
+            <circle cx="38" cy="114" r="1.8" fill="url(#jointGrad)" />
+            <path d="M 39,114 Q 32,113 31,118 Q 30,123 36,124" stroke="url(#limbGrad)" stroke-width="3.5"
+              stroke-linecap="round" fill="none" />
+            <circle cx="36" cy="124" r="1.8" fill="url(#jointGrad)" />
+            <path d="M 41,120 Q 33,120 32,126 Q 31,131 37,131" stroke="url(#limbGrad)" stroke-width="3.3"
+              stroke-linecap="round" fill="none" />
+            <circle cx="37" cy="131" r="1.6" fill="url(#jointGrad)" />
+            <path d="M 43,126 Q 37,128 37,134 Q 37,138 42,137" stroke="url(#limbGrad)" stroke-width="3"
+              stroke-linecap="round" fill="none" />
+            <circle cx="42" cy="137" r="1.5" fill="url(#jointGrad)" />
+            <line x1="33" y1="113" x2="32" y2="128" stroke="#00f0ff" stroke-width="1.2" opacity="0.75"
+              filter="url(#svgCyanGlow)" />
+          </g>
+
+          <!-- ═══ 2. HOLOGRAPHIC SCI-FI TABLET (Center HUD) ═══ -->
+          <g class="svg-tablet-group">
+            <!-- 3D Holographic Projection Cone Emitters from Tablet upward -->
+            <polygon class="tablet-holo-beam" points="46,108 102,108 118,80 30,80" fill="url(#holoBeamGrad)" />
+
+            <!-- Outer Holographic Halo Glow -->
+            <rect x="38" y="103" width="72" height="58" rx="9" fill="rgba(0,220,255,0.12)"
+              filter="url(#svgBrightGlow)" />
+            <!-- Cyber Glass Body with Neon Border -->
+            <rect class="tablet-svg-body" x="42" y="107" width="64" height="50" rx="6" fill="url(#tabletGlassGrad)"
+              stroke="url(#tabletEdgeGrad)" stroke-width="1.8" />
+            <!-- Top Bezel Specular Glint -->
+            <line x1="45" y1="108.5" x2="103" y2="108.5" stroke="rgba(255,255,255,0.95)" stroke-width="1"
+              stroke-linecap="round" />
+
+            <!-- Floating 3D HUD Data Tags floating in mid-air above tablet -->
+            <g class="svg-floating-hud">
+              <rect x="44" y="86" width="30" height="8" rx="2" fill="rgba(6,22,60,0.75)" stroke="#00f0ff"
+                stroke-width="0.6" />
+              <text x="47" y="92" font-family="'JetBrains Mono', monospace" font-size="3.8" font-weight="800"
+                fill="#00ffff">AI: ONLINE</text>
+              <circle cx="71" cy="90" r="1.2" fill="#00ffaa" filter="url(#svgCyanGlow)" />
+
+              <rect x="78" y="86" width="28" height="8" rx="2" fill="rgba(25,10,55,0.75)" stroke="#c084fc"
+                stroke-width="0.6" />
+              <text x="81" y="92" font-family="'JetBrains Mono', monospace" font-size="3.8" font-weight="800"
+                fill="#e879f9">SYNC 99.8%</text>
+            </g>
+
+            <!-- Clipped Active HUD Screen Contents -->
+            <g clip-path="url(#tabletScreenClip)">
+              <!-- Hologram Grid Background -->
+              <line x1="42" y1="120" x2="106" y2="120" stroke="rgba(0,240,255,0.15)" stroke-width="0.5" />
+              <line x1="42" y1="133" x2="106" y2="133" stroke="rgba(0,240,255,0.15)" stroke-width="0.5" />
+              <line x1="42" y1="145" x2="106" y2="145" stroke="rgba(0,240,255,0.15)" stroke-width="0.5" />
+              <line x1="63" y1="107" x2="63" y2="157" stroke="rgba(0,240,255,0.12)" stroke-width="0.5" />
+              <line x1="85" y1="107" x2="85" y2="157" stroke="rgba(0,240,255,0.12)" stroke-width="0.5" />
+
+              <!-- Moving Laser Scanline -->
+              <rect class="tablet-scanline" x="42" y="107" width="64" height="9" fill="url(#scanlineGrad)" />
+
+              <!-- HUD Top Header -->
+              <text x="46" y="115" font-family="'JetBrains Mono', monospace" font-size="4.6" font-weight="800"
+                fill="#a5f3fc" letter-spacing="0.6">ARIA // OS 3.2</text>
+              <!-- Live Activity Pulse Dot -->
+              <circle class="tablet-status-led" cx="95" cy="113.5" r="1.6" fill="#00ffaa" filter="url(#svgCyanGlow)" />
+              <!-- Battery / Core indicator -->
+              <rect x="99" y="111.5" width="5.5" height="3" rx="0.6" fill="none" stroke="#38bdf8" stroke-width="0.6" />
+              <rect x="100" y="112.3" width="3.5" height="1.4" rx="0.3" fill="#00ffaa" />
+
+              <!-- Header separator line -->
+              <line x1="44" y1="117.5" x2="104" y2="117.5" stroke="rgba(0,240,255,0.4)" stroke-width="0.7" />
+
+              <!-- Dynamic Sine Audio/Telemetry Waveform -->
+              <path class="svg-telemetry-wave" d="M 45,125 Q 50,118 55,125 T 65,125 T 75,125 T 85,125 T 103,125"
+                fill="none" stroke="#00f0ff" stroke-width="1.4" />
+              <!-- Active Nodes on Waveform -->
+              <circle class="svg-wave-node" cx="65" cy="125" r="1.8" fill="#ffffff" filter="url(#svgCyanGlow)" />
+              <circle class="svg-wave-node-2" cx="80" cy="125" r="1.5" fill="#00ffc4" filter="url(#svgCyanGlow)" />
+
+              <!-- Real-time Equalizer / Metric Bars -->
+              <g class="svg-bars-group">
+                <rect class="svg-bar b1" x="46" y="132" width="4" height="14" rx="1" fill="#00f0ff" />
+                <rect class="svg-bar b2" x="52" y="136" width="4" height="10" rx="1" fill="#38bdf8" />
+                <rect class="svg-bar b3" x="58" y="130" width="4" height="16" rx="1" fill="#00ffc4" />
+                <rect class="svg-bar b4" x="64" y="134" width="4" height="12" rx="1" fill="#818cf8" />
+                <rect class="svg-bar b5" x="70" y="138" width="4" height="8" rx="1" fill="#c084fc" />
+                <rect class="svg-bar b6" x="76" y="135" width="4" height="11" rx="1" fill="#34d399" />
+                <!-- Baseline -->
+                <line x1="44" y1="147" x2="82" y2="147" stroke="rgba(0,240,255,0.45)" stroke-width="0.7" />
+              </g>
+
+              <!-- Futuristic Mini Radar Dial with Rotating Sweep -->
+              <circle cx="95" cy="138" r="5.5" fill="rgba(0,240,255,0.08)" stroke="rgba(0,240,255,0.35)"
+                stroke-width="0.8" />
+              <circle cx="95" cy="138" r="2.5" fill="none" stroke="rgba(0,240,255,0.25)" stroke-width="0.5" />
+              <path class="svg-radar-spin" d="M 95,132.5 A 5.5 5.5 0 0 1 100.5,138" fill="none" stroke="#00ffaa"
+                stroke-width="1.4" stroke-linecap="round" />
+
+              <!-- Bottom interactive HUD status string -->
+              <text x="46" y="153" font-family="'JetBrains Mono', monospace" font-size="3.6" font-weight="700"
+                fill="rgba(0,240,255,0.8)" letter-spacing="0.4">CORE FREQ: 4.8 GHz</text>
+            </g>
+
+            <!-- Real-time Touch Rings expanding from Finger Contact Point -->
+            <g class="svg-touch-effects">
+              <circle class="svg-touch-ripple-1" cx="80" cy="125" r="3" fill="none" stroke="#00f0ff"
+                stroke-width="1.4" />
+              <circle class="svg-touch-ripple-2" cx="80" cy="125" r="3" fill="none" stroke="#00ffff" stroke-width="0.9"
+                opacity="0.7" />
+              <circle class="svg-tap-spark" cx="80" cy="125" r="1.8" fill="#ffffff" filter="url(#svgBrightGlow)" />
+            </g>
+          </g>
+
+          <!-- ═══ 3. RIGHT ARM & OPERATING HAND (Tapping/Controlling Tablet) ═══ -->
+          <g class="svg-right-arm-group">
+            <circle cx="162" cy="60" r="8.5" fill="url(#jointGrad)" />
+            <circle cx="162" cy="60" r="3.5" fill="#00f0ff" opacity="0.75" filter="url(#svgCyanGlow)" />
+            <!-- Upper arm sweeping forward-down -->
+            <path d="M 162,60 Q 152,76 138,84" stroke="url(#limbGrad)" stroke-width="10.5" stroke-linecap="round"
+              fill="none" />
+            <!-- Elbow joint (Pivot for active tapping) -->
+            <circle cx="138" cy="84" r="5.5" fill="url(#jointGrad)" />
+            <circle cx="138" cy="84" r="2.4" fill="#00f0ff" filter="url(#svgCyanGlow)" />
+
+            <!-- FOREARM + HAND RIG (Operating Tablet in Real-Time) -->
+            <g class="right-forearm-op">
+              <path d="M 138,84 Q 118,104 94,120" stroke="url(#limbGrad)" stroke-width="8.5" stroke-linecap="round"
+                fill="none" />
+              <circle class="right-wrist-joint" cx="94" cy="120" r="4.8" fill="url(#jointGrad)" />
+              <circle cx="94" cy="120" r="2.2" fill="#00f0ff" filter="url(#svgCyanGlow)" />
+
+              <rect class="right-palm" x="86" y="116" width="10" height="9.5" rx="3.5" fill="url(#limbGrad)"
+                stroke="#456ea8" stroke-width="0.8" />
+
+              <path d="M 88,125 Q 89,129 92,129 Q 95,129 95,125" stroke="url(#limbGrad)" stroke-width="3.2"
+                stroke-linecap="round" fill="none" />
+              <path d="M 93,125 Q 94,128 97,127" stroke="url(#limbGrad)" stroke-width="2.8" stroke-linecap="round"
+                fill="none" />
+              <path d="M 94,119 Q 98,116 100,120" stroke="url(#limbGrad)" stroke-width="3" stroke-linecap="round"
+                fill="none" />
+              <circle cx="100" cy="120" r="1.6" fill="url(#jointGrad)" />
+
+              <!-- Articulated Index Finger Pointing & Operating -->
+              <path class="index-prox" d="M 86,118 Q 83,117 80,117" stroke="url(#limbGrad)" stroke-width="3.8"
+                stroke-linecap="round" fill="none" />
+              <circle cx="80" cy="117" r="2" fill="url(#jointGrad)" />
+              <path class="index-mid" d="M 80,117 Q 80.5,121 80,125" stroke="url(#limbGrad)" stroke-width="3.4"
+                stroke-linecap="round" fill="none" />
+
+              <!-- Glowing Capacitive Fingertip touching the screen -->
+              <circle class="svg-fingertip" cx="80" cy="125" r="2.6" fill="#ffffff" stroke="#00f0ff" stroke-width="1.3"
+                filter="url(#svgBrightGlow)" />
+            </g>
+          </g>
+        </svg>
+        <!-- ═══ END SVG ARMS + TABLET ═══ -->
+      </div>
+      <!-- ═══ END ARIA 3D ROBOT RIG ═══ -->
+
+      <div class="aria-dock-label">
+        <div class="aria-dock-pill">
+          <div class="sound-wave-bars">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="aria-dock-name">Aria AI</span>
+          <span class="aria-dock-status">
+            <span class="live-indicator-dot"></span> Online
+          </span>
+        </div>
+      </div>
+    </button>
+
+    <!-- ═══ ARIA AUTONOMOUS ROBOT TOUR SPEECH BUBBLE & HUD ═══ -->
+    <div class="aria-tour-bubble" id="ariaTourBubble" role="dialog" aria-label="Aria Live Guide Speech Bubble"
+      style="display: none;">
+      <div class="tour-bubble-pointer pointer-left" id="tourBubblePointer"></div>
+
+      <!-- Top HUD Telemetry Row -->
+      <div class="tour-bubble-topbar">
+        <div class="tour-bubble-badge">
+          <span class="tour-live-dot"></span>
+          <span id="ariaTourStepBadge">STEP 1/6 • AI LIVE GUIDE</span>
+        </div>
+        <div class="tour-bubble-quick-actions">
+          <button type="button" class="tour-quick-btn" id="ariaTourLangBtn" title="Switch Language (EN / हिंदी)">
+            <span id="ariaTourLangLabel">🌐 हिंदी</span>
+          </button>
+          <button type="button" class="tour-quick-btn" id="ariaTourVoiceBtn" title="Toggle Voice Mute/Unmute">
+            <span id="ariaTourVoiceIcon">🔊</span>
+          </button>
+          <button type="button" class="tour-quick-btn tour-exit-btn" id="ariaTourExitBtn"
+            title="Exit Tour & Return Home">✕</button>
+        </div>
+      </div>
+
+      <!-- Live Voice Waveform Bar (active while Aria is speaking) -->
+      <div class="tour-bubble-waveform" id="ariaTourWaveform">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <!-- Main Step Narrative Content -->
+      <div class="tour-bubble-content">
+        <h4 class="tour-bubble-title" id="ariaTourBubbleTitle">Welcome to SynapseCareer</h4>
+        <p class="tour-bubble-desc" id="ariaTourBubbleText">
+          Hello! I am Aria, your AI digital career guide...
+        </p>
+      </div>
+
+      <!-- Navigation & Tour Control Footer -->
+      <div class="tour-bubble-footer">
+        <div class="tour-bubble-dots" id="ariaTourDots"></div>
+        <div class="tour-bubble-nav-btns">
+          <button type="button" class="tour-nav-btn tour-prev-btn" id="ariaTourPrevBtn">◀ Back</button>
+          <button type="button" class="tour-nav-btn tour-next-btn" id="ariaTourNextBtn">Next Step ➔</button>
+        </div>
+      </div>
+      <!-- Auto-advance progress bar -->
+      <div class="tour-auto-bar" id="ariaTourAutoBar" style="display: none;">
+        <div class="tour-auto-fill" id="ariaTourAutoFill"></div>
+      </div>
+    </div>
+
+    <!-- Slide-out Cyber Holographic Guide & Chat Panel -->
+    <div class="aria-guide-panel" id="ariaGuideModal" role="dialog" aria-label="AI Guide Tutorial and Chat">
+      <!-- Header -->
+      <div class="aria-guide-header">
+        <div class="aria-guide-profile">
+          <div class="aria-mini-avatar">
+            <div class="mini-visor">
+              <div class="mini-eye"></div>
+              <div class="mini-eye"></div>
+            </div>
+          </div>
+          <div class="aria-header-text">
+            <h3>Aria • AI Mentor</h3>
+            <div class="aria-header-status">
+              <span class="live-indicator-dot"></span> Ready to guide & chat
+            </div>
+          </div>
+        </div>
+        <div class="aria-header-controls">
+          <div class="aria-lang-pill" id="ariaLangPill">
+            <button class="aria-lang-choice active" id="langChoiceEn" data-lang="en">EN</button>
+            <button class="aria-lang-choice" id="langChoiceHi" data-lang="hi">हिंदी</button>
+          </div>
+          <button class="aria-icon-btn" id="ariaVoiceToggle" title="Toggle Voice">🔊</button>
+          <button class="aria-icon-btn aria-close-btn" id="ariaCloseBtn" title="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Mode Switcher Tabs -->
+      <div class="aria-tabs-bar">
+        <button class="aria-tab-btn active" id="ariaTabChat">
+          <span>💬</span> Ask Aria
+        </button>
+        <button class="aria-tab-btn" id="ariaTabTour">
+          <span>🎯</span> Guided Tour
+        </button>
+      </div>
+
+      <!-- Views Container -->
+      <div class="aria-views-container">
+        <!-- View 1: Interactive Chat -->
+        <div class="aria-view active" id="ariaChatView">
+          <div class="aria-chat-stream" id="ariaChatStream">
+            <div class="aria-chat-bubble aria-bubble-ai" id="ariaWelcomeMsg">
+              👋 Hi there! I'm <strong>Aria</strong>, your AI career mentor. Ask me anything about career paths, resume
+              tailoring, or in-demand tech skills!
+            </div>
+          </div>
+
+          <!-- Suggested prompt chips -->
+          <div class="aria-chips-wrap">
+            <button class="aria-chip" data-aria-prompt="Please give me a live guided tour of the website">🎯 Start
+              Website Tour</button>
+            <button class="aria-chip" data-aria-prompt="Which tech career has the highest salary growth in 2026?">📈
+              High Growth Careers</button>
+            <button class="aria-chip" data-aria-prompt="How does the neural network calculate skill match?">🧠 Neural
+              Match Logic</button>
+            <button class="aria-chip" data-aria-prompt="Give me 3 tips to level up my technical profile.">⚡ Level Up
+              Profile</button>
+          </div>
+
+          <!-- Chat Input Field -->
+          <div class="aria-input-row">
+            <input type="text" class="aria-chat-input" id="ariaChatInput" placeholder="Ask Aria anything..." />
+            <button class="aria-send-btn" id="ariaChatSendBtn" title="Send message">➔</button>
+          </div>
+        </div>
+
+        <!-- View 2: Guided Interactive Tour Language Chooser & Launchpad -->
+        <div class="aria-view" id="ariaTourView">
+          <div class="aria-tour-select-card" id="ariaTourSelectCard">
+            <div class="tour-select-badge">✦ STEP 1: CHOOSE TOUR LANGUAGE ✦</div>
+            <h3 class="tour-select-title">Choose Language to Start Tour</h3>
+            <p class="tour-select-sub">
+              Language choose karte hi chatbox automatically hide ho jayega aur Aria live bol kar poori website ek-ek
+              karke samjhayegi.
+            </p>
+            <div class="tour-select-grid">
+              <button type="button" class="tour-select-btn btn-lang-hi" id="tourStartHiBtn">
+                <span class="tour-select-flag">🇮🇳</span>
+                <div class="tour-select-info">
+                  <strong>हिंदी में टूर शुरू करें</strong>
+                  <span>Hindi Voice • पूरी वेबसाइट लाइव घूमें</span>
+                </div>
+                <span class="tour-select-arrow">➔</span>
+              </button>
+              <button type="button" class="tour-select-btn btn-lang-en" id="tourStartEnBtn">
+                <span class="tour-select-flag">🌐</span>
+                <div class="tour-select-info">
+                  <strong>Start Tour in English</strong>
+                  <span>English Voice • Live Platform Walkthrough</span>
+                </div>
+                <span class="tour-select-arrow">➔</span>
+              </button>
+            </div>
+            <div class="tour-select-footer-hint">
+              ⚡ <em>Auto-Pilot: Har step bol kar samjhane ke baad automatically next step follow hoga!</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Actual User Profile Modal -->
+    <div class="modal-overlay" id="editActualUserModal">
+      <div class="modal-container" style="max-width: 500px;">
+        <div class="modal-header">
+          <div>
+            <span class="tier-pill tier-high">⭐ ACTUAL USER IDENTITY</span>
+            <h2 style="font-size: 1.25rem; margin-top: 0.35rem; color: #ffffff;">Configure Your Live Profile</h2>
+          </div>
+          <button class="modal-close-btn" id="closeEditActualModalBtn">✕</button>
+        </div>
+
+        <div class="modal-body" style="padding: 1.4rem;">
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
+            Apna actual Name aur Career Role set karein. Yeh details direct <strong>SYNAPSE TOPOLOGY: MULTI-LAYER
+              PERCEPTRON (60 FPS)</strong> ke sath sync hongi!
+          </p>
+
+          <form id="editActualUserForm">
+            <div class="wizard-form-group">
+              <label
+                style="font-size:0.75rem; color:var(--text-secondary); font-weight:600; margin-bottom:4px; display:block;">Full
+                Name *</label>
+              <input type="text" class="wizard-form-input" id="actualNameInput" placeholder="e.g. Muhammad Ahmed Khan"
+                required
+                style="width:100%; padding:0.55rem 0.8rem; background:rgba(8,13,30,0.85); border:1px solid rgba(0,245,255,0.25); border-radius:8px; color:#fff; font-size:0.85rem;" />
+            </div>
+
+            <div class="wizard-form-group" style="margin-top:0.8rem;">
+              <label
+                style="font-size:0.75rem; color:var(--text-secondary); font-weight:600; margin-bottom:4px; display:block;">Career
+                Role / Target Major *</label>
+              <input type="text" class="wizard-form-input" id="actualTitleInput"
+                placeholder="e.g. Full Stack &amp; AI Engineer" required
+                style="width:100%; padding:0.55rem 0.8rem; background:rgba(8,13,30,0.85); border:1px solid rgba(0,245,255,0.25); border-radius:8px; color:#fff; font-size:0.85rem;" />
+            </div>
+
+            <div class="wizard-form-group" style="margin-top:0.8rem;">
+              <label
+                style="font-size:0.75rem; color:var(--text-secondary); font-weight:600; margin-bottom:4px; display:block;">Avatar
+                Emoji</label>
+              <div style="display: flex; gap: 0.45rem; margin-top: 0.3rem;" id="actualAvatarSelector">
+                <button type="button" class="avatar-pick-btn active" data-avatar="⭐"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid var(--neon-cyan); background:rgba(0,245,255,0.15); font-size:1.1rem; cursor:pointer;">⭐</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="👨‍💻"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">👨‍💻</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="👩‍💻"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">👩‍💻</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="🚀"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">🚀</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="🧠"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">🧠</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="⚡"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">⚡</button>
+                <button type="button" class="avatar-pick-btn" data-avatar="👤"
+                  style="width:34px; height:34px; border-radius:8px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.05); font-size:1.1rem; cursor:pointer;">👤</button>
+              </div>
+            </div>
+
+            <div class="wizard-form-group" style="margin-top:0.8rem;">
+              <label
+                style="font-size:0.75rem; color:var(--text-secondary); font-weight:600; margin-bottom:4px; display:block;">Quick
+                Skill Focus Preset</label>
+              <select class="wizard-form-input" id="actualSkillPresetSelect"
+                style="width:100%; padding:0.55rem 0.8rem; background:rgba(8,13,30,0.85); border:1px solid rgba(0,245,255,0.25); border-radius:8px; color:#fff; font-size:0.85rem; cursor:pointer;">
+                <option value="keep">Keep Current Adjusted Skills</option>
+                <option value="fullstack">Full Stack Developer (JavaScript: 92, React: 88, APIs: 85, SQL: 80)</option>
+                <option value="ai_ml">AI &amp; Machine Learning (Python: 92, PyTorch: 88, Deep Learning: 85)</option>
+                <option value="data_science">Data Scientist (Python: 88, SQL: 90, Data Analysis: 92, Stats: 85)</option>
+                <option value="devops">DevOps &amp; Cloud (Docker/K8s: 90, Cloud: 88, Distributed Sys: 82)</option>
+              </select>
+            </div>
+
+            <div class="wizard-form-group" style="margin-top:0.8rem;">
+              <label
+                style="font-size:0.75rem; color:var(--text-secondary); font-weight:600; margin-bottom:4px; display:block;">Bio
+                Summary</label>
+              <textarea class="wizard-form-input" id="actualBioInput" rows="2" placeholder="Brief career summary..."
+                style="width:100%; padding:0.55rem 0.8rem; background:rgba(8,13,30,0.85); border:1px solid rgba(0,245,255,0.25); border-radius:8px; color:#fff; font-size:0.85rem; resize:vertical;"></textarea>
+            </div>
+
+            <div style="display: flex; gap: 0.6rem; margin-top: 1.2rem;">
+              <button type="button" class="nav-action-btn" id="syncFromResumeBtn"
+                style="flex: 1; justify-content:center; background: rgba(0, 245, 255, 0.08); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); font-size: 0.78rem; padding: 0.6rem; cursor:pointer; border-radius:7px;">
+                ⚡ Sync from Resume
+              </button>
+              <button type="submit" class="nav-action-btn" id="saveActualUserBtn"
+                style="flex: 1.4; justify-content:center; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); color: #050814; font-weight: 700; font-size: 0.85rem; padding: 0.6rem; cursor:pointer; border-radius:7px; border:none;">
+                💾 Save &amp; Activate Topology
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js?v=2.5"></script>
+</body>
+
+</html>

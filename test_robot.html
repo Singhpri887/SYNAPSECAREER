@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3D Cyber Robot Test</title>
+<link rel="stylesheet" href="styles/robot.css">
+<style>
+  body {
+    background: radial-gradient(circle at 50% 50%, #0c1430 0%, #050814 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  .test-container { position: relative; }
+  /* Override fixed positioning for test viewing */
+  .aria-dock-btn {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    transform: scale(2.2);
+  }
+</style>
+</head>
+<body>
+  <div class="test-container">
+    <button class="aria-dock-btn" id="ariaDockBtn" title="Launch Interactive AI Guide" aria-label="Aria AI Floating Guide">
+      <!-- ═══ ARIA 3D ROBOT RIG ═══ -->
+      <div class="aria-robot" id="ariaRobotRig">
+        <!-- 0. Ambient Neon Aura Glow Behind Robot -->
+        <div class="robot-ambient-aura"></div>
+
+        <!-- 1. 3D Holographic Gyro Orbit Rings & Data Beads -->
+        <div class="robot-orbit-system">
+          <div class="orbit-ring ring-primary">
+            <div class="orbit-node node-cyan"></div>
+          </div>
+          <div class="orbit-ring ring-secondary">
+            <div class="orbit-node node-purple"></div>
+          </div>
+        </div>
+
+        <!-- 2. Top Antenna Beacon with Concentric Pulses -->
+        <div class="robot-antenna">
+          <div class="antenna-halo"></div>
+          <div class="antenna-bulb"></div>
+          <div class="antenna-ring"></div>
+          <div class="antenna-rod"></div>
+        </div>
+
+        <!-- 3. Cyber Headphones / Audio Sensor Nodes -->
+        <div class="robot-ear robot-ear-left">
+          <div class="ear-ring">
+            <div class="ear-audio-waves"><span></span><span></span><span></span></div>
+            <div class="ear-core"></div>
+          </div>
+        </div>
+        <div class="robot-ear robot-ear-right">
+          <div class="ear-ring">
+            <div class="ear-audio-waves"><span></span><span></span><span></span></div>
+            <div class="ear-core"></div>
+          </div>
+        </div>
+
+        <!-- 4. Main Ceramic Body Sphere with Studio Rim Lighting -->
+        <div class="robot-body">
+          <div class="body-gloss-sweep"></div>
+          <div class="body-gloss-secondary"></div>
+          <div class="body-rim-highlight"></div>
+          <div class="body-cyber-circuit circuit-left"></div>
+          <div class="body-cyber-circuit circuit-right"></div>
+          <div class="body-panel-line"></div>
+          <div class="body-model-label">ARIA • QUANTUM AI</div>
+
+          <!-- OLED VISOR SCREEN WITH METALLIC BEZEL & 3D GLASS REFRACTION -->
+          <div class="robot-face-bezel">
+            <div class="robot-face">
+              <!-- Holographic Hex Grid Overlay -->
+              <div class="visor-hex-grid"></div>
+              <!-- Curved Glass Specular Arc -->
+              <div class="visor-reflection"></div>
+              <div class="visor-reflection-bottom"></div>
+
+              <!-- Expressive Glowing Cyan OLED Eyes -->
+              <div class="robot-eyes">
+                <div class="robot-eye eye-left">
+                  <svg class="eye-svg" viewBox="0 0 24 30">
+                    <rect x="2" y="3" width="20" height="24" rx="10" fill="url(#eyeGrad)"/>
+                    <rect x="4" y="5" width="16" height="10" rx="5" fill="#e0faff" opacity="0.85"/>
+                    <circle cx="12" cy="18" r="3.2" fill="#ffffff" opacity="0.95"/>
+                    <circle cx="8" cy="11" r="1.5" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="16" cy="12" r="1" fill="#a5f3fc" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="robot-eye eye-right">
+                  <svg class="eye-svg" viewBox="0 0 24 30">
+                    <rect x="2" y="3" width="20" height="24" rx="10" fill="url(#eyeGrad)"/>
+                    <rect x="4" y="5" width="16" height="10" rx="5" fill="#e0faff" opacity="0.85"/>
+                    <circle cx="12" cy="18" r="3.2" fill="#ffffff" opacity="0.95"/>
+                    <circle cx="8" cy="11" r="1.5" fill="#ffffff" opacity="0.9"/>
+                    <circle cx="16" cy="12" r="1" fill="#a5f3fc" opacity="0.8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Cheerful Cyber Blush Cheeks -->
+              <div class="robot-cheeks">
+                <div class="cheek"></div>
+                <div class="cheek"></div>
+              </div>
+
+              <!-- Glowing Smile Mouth -->
+              <div class="robot-mouth">
+                <svg class="mouth-svg" viewBox="0 0 22 12">
+                  <path class="mouth-path" d="M 3,3 Q 11,11 19,3" fill="none" stroke="#00f5ff" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Quantum Ion Thruster with Chrome Nozzle & Plasma Flame -->
+        <div class="robot-thruster">
+          <div class="thruster-cone"></div>
+          <div class="thruster-ring"></div>
+          <div class="thruster-core-glow"></div>
+          <div class="thruster-beam-main"></div>
+          <div class="thruster-beam-outer"></div>
+        </div>
+
+        <!-- 6. Ground Sci-Fi Hologram Telemetry Circle & Soft Shadow -->
+        <div class="robot-ground-holo"></div>
+        <div class="robot-shadow"></div>
+
+        <!-- ═══ 7. SVG OVERLAY: Coordinated Arms + Interactive Hologram Tablet ═══ -->
+        <svg class="robot-arms-tablet-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="svgCyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.2" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="svgBrightGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="3.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8"/>
+              <stop offset="60%" stop-color="#00f5ff"/>
+              <stop offset="100%" stop-color="#00e5a3"/>
+            </linearGradient>
+            <linearGradient id="limbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#f2f7ff"/>
+              <stop offset="70%" stop-color="#bfd6fb"/>
+              <stop offset="100%" stop-color="#769ee3"/>
+            </linearGradient>
+            <radialGradient id="jointGrad" cx="35%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="50%" stop-color="#c5dcf9"/>
+              <stop offset="100%" stop-color="#608bd8"/>
+            </radialGradient>
+            <linearGradient id="tabletGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(3,18,48,0.92)"/>
+              <stop offset="50%" stop-color="rgba(12,38,88,0.85)"/>
+              <stop offset="100%" stop-color="rgba(5,22,60,0.94)"/>
+            </linearGradient>
+            <linearGradient id="tabletEdgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f5ff"/>
+              <stop offset="50%" stop-color="#38bdf8"/>
+              <stop offset="100%" stop-color="#c084fc"/>
+            </linearGradient>
+            <linearGradient id="holoBeamGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+              <stop offset="0%" stop-color="rgba(0,240,255,0.45)"/>
+              <stop offset="40%" stop-color="rgba(0,240,255,0.18)"/>
+              <stop offset="100%" stop-color="rgba(192,132,252,0.0)"/>
+            </linearGradient>
+            <linearGradient id="scanlineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(0,240,255,0)"/>
+              <stop offset="50%" stop-color="rgba(0,255,230,0.65)"/>
+              <stop offset="100%" stop-color="rgba(0,240,255,0)"/>
+            </linearGradient>
+            <clipPath id="tabletScreenClip">
+              <rect x="42" y="107" width="64" height="50" rx="6"/>
+            </clipPath>
+          </defs>
+
+          <!-- ═══ 1. LEFT ARM (Holding Tablet from Left Side) ═══ -->
+          <g class="svg-left-arm-group">
+            <circle cx="38" cy="60" r="8.5" fill="url(#jointGrad)"/>
+            <circle cx="38" cy="60" r="3.5" fill="#00f0ff" opacity="0.75" filter="url(#svgCyanGlow)"/>
+            <!-- Upper arm -->
+            <path d="M 38,60 Q 28,76 26,90" stroke="url(#limbGrad)" stroke-width="10.5" stroke-linecap="round" fill="none"/>
+            <!-- Elbow joint -->
+            <circle cx="26" cy="90" r="5.5" fill="url(#jointGrad)"/>
+            <circle cx="26" cy="90" r="2.4" fill="#00f0ff" filter="url(#svgCyanGlow)"/>
+            <!-- Forearm angling in to grasp tablet -->
+            <path d="M 26,90 Q 34,105 44,115" stroke="url(#limbGrad)" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+            <!-- Wrist joint -->
+            <circle cx="44" cy="115" r="4.8" fill="url(#jointGrad)"/>
+
+            <!-- Left Fingers gripping tablet bezel firmly -->
+            <path d="M 40,108 Q 35,106 34,110 Q 33,114 38,114" stroke="url(#limbGrad)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+            <circle cx="38" cy="114" r="1.8" fill="url(#jointGrad)"/>
+            <path d="M 39,114 Q 32,113 31,118 Q 30,123 36,124" stroke="url(#limbGrad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <circle cx="36" cy="124" r="1.8" fill="url(#jointGrad)"/>
+            <path d="M 41,120 Q 33,120 32,126 Q 31,131 37,131" stroke="url(#limbGrad)" stroke-width="3.3" stroke-linecap="round" fill="none"/>
+            <circle cx="37" cy="131" r="1.6" fill="url(#jointGrad)"/>
+            <path d="M 43,126 Q 37,128 37,134 Q 37,138 42,137" stroke="url(#limbGrad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="42" cy="137" r="1.5" fill="url(#jointGrad)"/>
+            <line x1="33" y1="113" x2="32" y2="128" stroke="#00f0ff" stroke-width="1.2" opacity="0.75" filter="url(#svgCyanGlow)"/>
+          </g>
+
+          <!-- ═══ 2. HOLOGRAPHIC SCI-FI TABLET (Center HUD) ═══ -->
+          <g class="svg-tablet-group">
+            <!-- 3D Holographic Projection Cone Emitters from Tablet upward -->
+            <polygon class="tablet-holo-beam" points="46,108 102,108 118,80 30,80" fill="url(#holoBeamGrad)"/>
+
+            <!-- Outer Holographic Halo Glow -->
+            <rect x="38" y="103" width="72" height="58" rx="9" fill="rgba(0,220,255,0.12)" filter="url(#svgBrightGlow)"/>
+            <!-- Cyber Glass Body with Neon Border -->
+            <rect class="tablet-svg-body" x="42" y="107" width="64" height="50" rx="6" fill="url(#tabletGlassGrad)" stroke="url(#tabletEdgeGrad)" stroke-width="1.8"/>
+            <!-- Top Bezel Specular Glint -->
+            <line x1="45" y1="108.5" x2="103" y2="108.5" stroke="rgba(255,255,255,0.95)" stroke-width="1" stroke-linecap="round"/>
+
+            <!-- Floating 3D HUD Data Tags floating in mid-air above tablet -->
+            <g class="svg-floating-hud">
+              <rect x="44" y="86" width="30" height="8" rx="2" fill="rgba(6,22,60,0.75)" stroke="#00f0ff" stroke-width="0.6"/>
+              <text x="47" y="92" font-family="'JetBrains Mono', monospace" font-size="3.8" font-weight="800" fill="#00ffff">AI: ONLINE</text>
+              <circle cx="71" cy="90" r="1.2" fill="#00ffaa" filter="url(#svgCyanGlow)"/>
+
+              <rect x="78" y="86" width="28" height="8" rx="2" fill="rgba(25,10,55,0.75)" stroke="#c084fc" stroke-width="0.6"/>
+              <text x="81" y="92" font-family="'JetBrains Mono', monospace" font-size="3.8" font-weight="800" fill="#e879f9">SYNC 99.8%</text>
+            </g>
+
+            <!-- Clipped Active HUD Screen Contents -->
+            <g clip-path="url(#tabletScreenClip)">
+              <!-- Hologram Grid Background -->
+              <line x1="42" y1="120" x2="106" y2="120" stroke="rgba(0,240,255,0.15)" stroke-width="0.5"/>
+              <line x1="42" y1="133" x2="106" y2="133" stroke="rgba(0,240,255,0.15)" stroke-width="0.5"/>
+              <line x1="42" y1="145" x2="106" y2="145" stroke="rgba(0,240,255,0.15)" stroke-width="0.5"/>
+              <line x1="63" y1="107" x2="63" y2="157" stroke="rgba(0,240,255,0.12)" stroke-width="0.5"/>
+              <line x1="85" y1="107" x2="85" y2="157" stroke="rgba(0,240,255,0.12)" stroke-width="0.5"/>
+
+              <!-- Moving Laser Scanline -->
+              <rect class="tablet-scanline" x="42" y="107" width="64" height="9" fill="url(#scanlineGrad)"/>
+
+              <!-- HUD Top Header -->
+              <text x="46" y="115" font-family="'JetBrains Mono', monospace" font-size="4.6" font-weight="800" fill="#a5f3fc" letter-spacing="0.6">ARIA // OS 3.2</text>
+              <!-- Live Activity Pulse Dot -->
+              <circle class="tablet-status-led" cx="95" cy="113.5" r="1.6" fill="#00ffaa" filter="url(#svgCyanGlow)"/>
+              <!-- Battery / Core indicator -->
+              <rect x="99" y="111.5" width="5.5" height="3" rx="0.6" fill="none" stroke="#38bdf8" stroke-width="0.6"/>
+              <rect x="100" y="112.3" width="3.5" height="1.4" rx="0.3" fill="#00ffaa"/>
+
+              <!-- Header separator line -->
+              <line x1="44" y1="117.5" x2="104" y2="117.5" stroke="rgba(0,240,255,0.4)" stroke-width="0.7"/>
+
+              <!-- Dynamic Sine Audio/Telemetry Waveform -->
+              <path class="svg-telemetry-wave" d="M 45,125 Q 50,118 55,125 T 65,125 T 75,125 T 85,125 T 103,125" fill="none" stroke="#00f0ff" stroke-width="1.4"/>
+              <!-- Active Nodes on Waveform -->
+              <circle class="svg-wave-node" cx="65" cy="125" r="1.8" fill="#ffffff" filter="url(#svgCyanGlow)"/>
+              <circle class="svg-wave-node-2" cx="80" cy="125" r="1.5" fill="#00ffc4" filter="url(#svgCyanGlow)"/>
+
+              <!-- Real-time Equalizer / Metric Bars -->
+              <g class="svg-bars-group">
+                <rect class="svg-bar b1" x="46" y="132" width="4" height="14" rx="1" fill="#00f0ff"/>
+                <rect class="svg-bar b2" x="52" y="136" width="4" height="10" rx="1" fill="#38bdf8"/>
+                <rect class="svg-bar b3" x="58" y="130" width="4" height="16" rx="1" fill="#00ffc4"/>
+                <rect class="svg-bar b4" x="64" y="134" width="4" height="12" rx="1" fill="#818cf8"/>
+                <rect class="svg-bar b5" x="70" y="138" width="4" height="8" rx="1" fill="#c084fc"/>
+                <rect class="svg-bar b6" x="76" y="135" width="4" height="11" rx="1" fill="#34d399"/>
+                <!-- Baseline -->
+                <line x1="44" y1="147" x2="82" y2="147" stroke="rgba(0,240,255,0.45)" stroke-width="0.7"/>
+              </g>
+
+              <!-- Futuristic Mini Radar Dial with Rotating Sweep -->
+              <circle cx="95" cy="138" r="5.5" fill="rgba(0,240,255,0.08)" stroke="rgba(0,240,255,0.35)" stroke-width="0.8"/>
+              <circle cx="95" cy="138" r="2.5" fill="none" stroke="rgba(0,240,255,0.25)" stroke-width="0.5"/>
+              <path class="svg-radar-spin" d="M 95,132.5 A 5.5 5.5 0 0 1 100.5,138" fill="none" stroke="#00ffaa" stroke-width="1.4" stroke-linecap="round"/>
+
+              <!-- Bottom interactive HUD status string -->
+              <text x="46" y="153" font-family="'JetBrains Mono', monospace" font-size="3.6" font-weight="700" fill="rgba(0,240,255,0.8)" letter-spacing="0.4">CORE FREQ: 4.8 GHz</text>
+            </g>
+
+            <!-- Real-time Touch Rings expanding from Finger Contact Point -->
+            <g class="svg-touch-effects">
+              <circle class="svg-touch-ripple-1" cx="80" cy="125" r="3" fill="none" stroke="#00f0ff" stroke-width="1.4"/>
+              <circle class="svg-touch-ripple-2" cx="80" cy="125" r="3" fill="none" stroke="#00ffff" stroke-width="0.9" opacity="0.7"/>
+              <circle class="svg-tap-spark" cx="80" cy="125" r="1.8" fill="#ffffff" filter="url(#svgBrightGlow)"/>
+            </g>
+          </g>
+
+          <!-- ═══ 3. RIGHT ARM & OPERATING HAND (Tapping/Controlling Tablet) ═══ -->
+          <g class="svg-right-arm-group">
+            <circle cx="162" cy="60" r="8.5" fill="url(#jointGrad)"/>
+            <circle cx="162" cy="60" r="3.5" fill="#00f0ff" opacity="0.75" filter="url(#svgCyanGlow)"/>
+            <!-- Upper arm sweeping forward-down -->
+            <path d="M 162,60 Q 152,76 138,84" stroke="url(#limbGrad)" stroke-width="10.5" stroke-linecap="round" fill="none"/>
+            <!-- Elbow joint (Pivot for active tapping) -->
+            <circle cx="138" cy="84" r="5.5" fill="url(#jointGrad)"/>
+            <circle cx="138" cy="84" r="2.4" fill="#00f0ff" filter="url(#svgCyanGlow)"/>
+
+            <!-- FOREARM + HAND RIG (Operating Tablet in Real-Time) -->
+            <g class="right-forearm-op">
+              <path d="M 138,84 Q 118,104 94,120" stroke="url(#limbGrad)" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+              <circle class="right-wrist-joint" cx="94" cy="120" r="4.8" fill="url(#jointGrad)"/>
+              <circle cx="94" cy="120" r="2.2" fill="#00f0ff" filter="url(#svgCyanGlow)"/>
+
+              <rect class="right-palm" x="86" y="116" width="10" height="9.5" rx="3.5" fill="url(#limbGrad)" stroke="#456ea8" stroke-width="0.8"/>
+
+              <path d="M 88,125 Q 89,129 92,129 Q 95,129 95,125" stroke="url(#limbGrad)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              <path d="M 93,125 Q 94,128 97,127" stroke="url(#limbGrad)" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+              <path d="M 94,119 Q 98,116 100,120" stroke="url(#limbGrad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <circle cx="100" cy="120" r="1.6" fill="url(#jointGrad)"/>
+
+              <!-- Articulated Index Finger Pointing & Operating -->
+              <path class="index-prox" d="M 86,118 Q 83,117 80,117" stroke="url(#limbGrad)" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+              <circle cx="80" cy="117" r="2" fill="url(#jointGrad)"/>
+              <path class="index-mid" d="M 80,117 Q 80.5,121 80,125" stroke="url(#limbGrad)" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+
+              <!-- Glowing Capacitive Fingertip touching the screen -->
+              <circle class="svg-fingertip" cx="80" cy="125" r="2.6" fill="#ffffff" stroke="#00f0ff" stroke-width="1.3" filter="url(#svgBrightGlow)"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="aria-dock-label">
+        <div class="aria-dock-pill">
+          <div class="sound-wave-bars">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="aria-dock-name">Aria AI</span>
+          <span class="aria-dock-status">
+            <span class="live-indicator-dot"></span> Online
+          </span>
+        </div>
+      </div>
+    </button>
+  </div>
+</body>
+</html>
