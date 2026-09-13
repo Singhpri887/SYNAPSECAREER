@@ -36,7 +36,8 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/neural.css">
-  <link rel="stylesheet" href="styles/robot.css?v=2.5">
+  <link rel="stylesheet" href="styles/robot.css?v=2.6">
+  <link rel="stylesheet" href="styles/mobile.css">
 </head>
 
 <body>
@@ -146,11 +147,11 @@
   <div class="ambient-glow-top"></div>
 
   <!-- Floating Quick Theme Switcher Pill -->
-  <button class="floating-theme-pill" id="floatingThemeToggle" title="Toggle Cyber Cyan / Neon Nebula Theme"
+  <!-- <button class="floating-theme-pill" id="floatingThemeToggle" title="Toggle Cyber Cyan / Neon Nebula Theme"
     aria-label="Toggle Theme">
     <span class="float-theme-icon" id="floatingThemeIcon">🌌</span>
     <span class="float-theme-text" id="floatingThemeText">THEME: CYBER CYAN</span>
-  </button>
+  </button> -->
 
   <div class="app-container">
 
@@ -217,9 +218,33 @@
           </div>
           <p class="brand-tagline"><span class="tagline-pulse"></span>AI Pathway & Neural Synthesis Engine</p>
         </div>
+        <div class="mobile-header-actions">
+          <button class="mobile-theme-btn" id="mobileThemeToggleBtn" title="Toggle Theme" aria-label="Toggle Cyber Theme">
+            <span id="mobileThemeIcon">🌌</span>
+          </button>
+          <button class="mobile-nav-toggle-btn" id="mobileNavToggleBtn" aria-label="Toggle Navigation Menu" title="Open AI Command Menu">
+            <span class="nav-bar b1"></span>
+            <span class="nav-bar b2"></span>
+            <span class="nav-bar b3"></span>
+          </button>
+        </div>
       </div>
 
-      <div class="nav-actions-wrap">
+      <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+      <div class="nav-actions-wrap" id="navActionsWrap">
+        <!-- Mobile Drawer Header -->
+        <div class="mobile-drawer-header" id="mobileDrawerHeader">
+          <div class="drawer-header-brand">
+            <span class="drawer-title-spark">⚡</span>
+            <div class="drawer-header-text">
+              <span class="drawer-title">SYNAPSECAREER</span>
+              <span class="drawer-subtitle">AI Command Suite</span>
+            </div>
+          </div>
+          <button class="mobile-drawer-close-btn" id="mobileNavCloseBtn" aria-label="Close Menu">✕</button>
+        </div>
+
         <!-- Dual Cyber Theme Segmented Controller -->
         <div class="theme-segmented-control" id="themeSegmentedControl" role="group" aria-label="Cyber Theme Selector">
           <button class="theme-seg-btn active" id="btnThemeDark" data-set-theme="dark"
@@ -2180,6 +2205,43 @@
     </div>
 
   </div>
+
+  <!-- =========================================================================
+       MOBILE APP BOTTOM NAVIGATION DOCK (Active on screens <= 860px)
+       Native-app feel, thumb-friendly navigation bar
+       ========================================================================= -->
+  <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Mobile Bottom Navigation">
+    <button class="dock-tab active" id="dockBtnHome" title="Home">
+      <span class="dock-tab-icon">🏠</span>
+      <span class="dock-tab-label">Home</span>
+      <span class="dock-active-glow"></span>
+    </button>
+    <button class="dock-tab" id="dockBtnJobs" title="Jobs">
+      <span class="dock-tab-icon">🎯</span>
+      <span class="dock-tab-label">Jobs</span>
+      <span class="dock-active-glow"></span>
+    </button>
+    <button class="dock-tab" id="dockBtnCopilot" title="AI Copilot">
+      <span class="dock-tab-icon">✨</span>
+      <span class="dock-tab-label">Copilot</span>
+      <span class="dock-active-glow"></span>
+    </button>
+    <button class="dock-tab" id="dockBtnMCQ" title="Placement MCQ">
+      <span class="dock-tab-icon">📚</span>
+      <span class="dock-tab-label">Quiz</span>
+      <span class="dock-active-glow"></span>
+    </button>
+    <a href="resume-builder.html" class="dock-tab" id="dockBtnResume" title="AI Resume Builder & ATS">
+      <span class="dock-tab-icon">⚡</span>
+      <span class="dock-tab-label">Resume</span>
+      <span class="dock-active-glow"></span>
+    </a>
+    <button class="dock-tab" id="dockBtnMenu" title="Menu">
+      <span class="dock-tab-icon">☰</span>
+      <span class="dock-tab-label">Menu</span>
+      <span class="dock-active-glow"></span>
+    </button>
+  </nav>
 
   <!-- Scripts -->
   <script type="module" src="js/app.js?v=2.5"></script>

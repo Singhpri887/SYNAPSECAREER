@@ -27,8 +27,17 @@ export class NeuralVisualizer {
     this.activeJobId = null;
     this.hoveredNode = null;
 
-    // Mouse interaction
+    // Mouse / touch interaction
     this.mouse = { x: -1000, y: -1000, isHovering: false };
+    this.pan = { x: 0, y: 0 };
+    this.dragState = {
+      active: false,
+      pointerId: null,
+      startX: 0,
+      startY: 0,
+      startPanX: 0,
+      startPanY: 0
+    };
 
     // Python code snippets for ambient backdrop flow
     this.pythonSnippets = [
@@ -60,8 +69,8 @@ export class NeuralVisualizer {
   initResize() {
     const handleResize = () => {
       const rect = this.canvas.parentElement.getBoundingClientRect();
-      this.width = Math.max(320, rect.width);
-      this.height = Math.max(380, rect.height || 460);
+      this.width = Math.max(240, Math.floor(rect.width) || 280);
+      this.height = Math.max(320, Math.floor(rect.height) || 380);
 
       this.canvas.width = this.width * this.pixelRatio;
       this.canvas.height = this.height * this.pixelRatio;
@@ -75,10 +84,65 @@ export class NeuralVisualizer {
   }
 
   bindEvents() {
-    this.canvas.addEventListener('mousemove', (e) => {
+    const clampPan = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const updatePointerFromEvent = (clientX, clientY) => {
       const rect = this.canvas.getBoundingClientRect();
-      this.mouse.x = e.clientX - rect.left;
-      this.mouse.y = e.clientY - rect.top;
+      this.mouse.x = clientX - rect.left - this.pan.x;
+      this.mouse.y = clientY - rect.top - this.pan.y;
+      this.mouse.isHovering = true;
+      this.checkNodeHover();
+    };
+
+    this.canvas.addEventListener('pointerdown', (e) => {
+      this.dragState.active = true;
+      this.dragState.pointerId = e.pointerId;
+      this.dragState.startX = e.clientX;
+      this.dragState.startY = e.clientY;
+      this.dragState.startPanX = this.pan.x;
+      this.dragState.startPanY = this.pan.y;
+      this.canvas.setPointerCapture(e.pointerId);
+      updatePointerFromEvent(e.clientX, e.clientY);
+    });
+
+    this.canvas.addEventListener('pointermove', (e) => {
+      if (this.dragState.active && e.pointerId === this.dragState.pointerId) {
+        const dx = e.clientX - this.dragState.startX;
+        const dy = e.clientY - this.dragState.startY;
+        this.pan.x = clampPan(this.dragState.startPanX + dx, -220, 220);
+        this.pan.y = clampPan(this.dragState.startPanY + dy, -180, 180);
+        this.mouse.isHovering = false;
+        return;
+      }
+
+      updatePointerFromEvent(e.clientX, e.clientY);
+    });
+
+    this.canvas.addEventListener('pointerup', (e) => {
+      if (this.dragState.active && e.pointerId === this.dragState.pointerId) {
+        this.dragState.active = false;
+        this.dragState.pointerId = null;
+      }
+      this.mouse.isHovering = false;
+      this.hoveredNode = null;
+      this.canvas.style.cursor = 'default';
+    });
+
+    this.canvas.addEventListener('pointerleave', () => {
+      if (!this.dragState.active) {
+        this.mouse.x = -1000;
+        this.mouse.y = -1000;
+        this.mouse.isHovering = false;
+        this.hoveredNode = null;
+        this.canvas.style.cursor = 'default';
+      }
+    });
+
+    this.canvas.addEventListener('mousemove', (e) => {
+      if (this.dragState.active) return;
+      const rect = this.canvas.getBoundingClientRect();
+      this.mouse.x = e.clientX - rect.left - this.pan.x;
+      this.mouse.y = e.clientY - rect.top - this.pan.y;
       this.mouse.isHovering = true;
       this.checkNodeHover();
     });
@@ -88,6 +152,7 @@ export class NeuralVisualizer {
       this.mouse.y = -1000;
       this.mouse.isHovering = false;
       this.hoveredNode = null;
+      this.canvas.style.cursor = 'default';
     });
 
     this.canvas.addEventListener('click', () => {
@@ -95,6 +160,38 @@ export class NeuralVisualizer {
         this.onJobSelect(this.hoveredNode.data.id);
       }
     });
+
+    this.canvas.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        this.mouse.x = touch.clientX - this.canvas.getBoundingClientRect().left - this.pan.x;
+        this.mouse.y = touch.clientY - this.canvas.getBoundingClientRect().top - this.pan.y;
+        this.mouse.isHovering = true;
+        this.checkNodeHover();
+        if (this.hoveredNode && this.hoveredNode.type === 'output' && this.onJobSelect) {
+          this.onJobSelect(this.hoveredNode.data.id);
+        }
+      }
+    }, { passive: true });
+
+    this.canvas.addEventListener('touchmove', (e) => {
+      if (!e.touches || e.touches.length === 0) return;
+      const touch = e.touches[0];
+      const rect = this.canvas.getBoundingClientRect();
+      const dx = touch.clientX - rect.left - this.pan.x;
+      const dy = touch.clientY - rect.top - this.pan.y;
+      this.mouse.x = dx;
+      this.mouse.y = dy;
+      this.mouse.isHovering = true;
+      this.checkNodeHover();
+    }, { passive: true });
+
+    this.canvas.addEventListener('touchend', () => {
+      setTimeout(() => {
+        this.mouse.isHovering = false;
+        this.hoveredNode = null;
+      }, 1500);
+    }, { passive: true });
   }
 
   initCodeStreams() {
@@ -267,6 +364,9 @@ export class NeuralVisualizer {
 
     this.ctx.clearRect(0, 0, this.width, this.height);
 
+    this.ctx.save();
+    this.ctx.translate(this.pan.x, this.pan.y);
+
     // 1. Draw ambient Python code stream
     this.drawCodeStreams();
 
@@ -281,6 +381,8 @@ export class NeuralVisualizer {
 
     // 5. Draw Layer Column Headers (HUD annotations)
     this.drawHUDHeaders();
+
+    this.ctx.restore();
 
     requestAnimationFrame(this.animate);
   }

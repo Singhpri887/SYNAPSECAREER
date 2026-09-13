@@ -238,10 +238,80 @@
     .esi{font-size:2.6rem;margin-bottom:.8rem;opacity:.26}
     .esttl{font-size:.92rem;font-weight:700;color:var(--txtm);margin-bottom:.38rem}
     .essub{font-size:.78rem;color:var(--txtm)}
+    /* Mobile View Tabs */
+    .mobile-builder-tabs {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      background: rgba(8, 13, 30, 0.9);
+      padding: 5px;
+      border-radius: 12px;
+      border: 1px solid var(--bord);
+    }
+    .mbt-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.65rem 0.5rem;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: var(--txt2);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .mbt-tab.active {
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.16), rgba(139, 92, 246, 0.2));
+      color: var(--nc);
+      box-shadow: 0 0 12px rgba(0, 245, 255, 0.2);
+    }
+    .mbt-badge {
+      font-size: 0.65rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 6px;
+      border-radius: 12px;
+      background: rgba(0, 255, 157, 0.15);
+      color: var(--ne);
+      border: 1px solid rgba(0, 255, 157, 0.3);
+    }
+
     /* Responsive */
-    @media(max-width:1080px){.rkmain{grid-template-columns:320px 1fr}}
-    @media(max-width:880px){.rkmain{grid-template-columns:1fr}.fp{position:static;max-height:none}.hct{grid-template-columns:1fr}.atsring{display:none}.atsgrid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:580px){.rkmain{padding:1rem}.hct{padding:2rem 1rem}.hdr{padding:0 1rem}.kwsec{grid-template-columns:1fr}.hstats{gap:1rem}}
+    @media(max-width:1080px){.rkmain{grid-template-columns:320px 1fr; gap: 1rem;}}
+    @media(max-width:880px){
+      .mobile-builder-tabs { display: grid; }
+      .rkmain { grid-template-columns: 1fr; padding: 1rem; }
+      .fp { position: static; max-height: none; }
+      .hct { grid-template-columns: 1fr; text-align: left; }
+      .atsring { display: none; }
+      .atsgrid { grid-template-columns: repeat(2, 1fr); }
+      .fats { bottom: 1rem; right: 1rem; padding: 0.5rem 0.8rem; }
+      /* Mobile tab view switching */
+      .rkmain.view-preview .fp { display: none !important; }
+      .rkmain.view-form .rp { display: none !important; }
+    }
+    @media(max-width:580px){
+      .hdr { padding: 0 0.85rem; height: 58px; }
+      .htitle { font-size: 1.05rem; }
+      .hbadge { display: none; }
+      .hbtn { padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+      .hct { padding: 1.8rem 0.9rem; }
+      .hh1 { font-size: 1.65rem; }
+      .hdesc { font-size: 0.85rem; }
+      .hstats { gap: 0.85rem; }
+      .hsv { font-size: 1.15rem; }
+      .rkmain { padding: 0.75rem; }
+      .kwsec { grid-template-columns: 1fr; }
+      .fr { grid-template-columns: 1fr; }
+      .rs { padding: 1.25rem 1rem; }
+      .rsn { font-size: 1.35rem; }
+      .inp, .tx, .sl { font-size: 16px !important; }
+      .brow { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
@@ -304,7 +374,18 @@
 </section>
 
 <!-- MAIN -->
-<main class="rkmain">
+<main class="rkmain view-form" id="rkmain">
+
+  <!-- Mobile View Switcher Pill -->
+  <div class="mobile-builder-tabs" id="mobileBuilderTabs" style="grid-column: 1/-1;">
+    <button type="button" class="mbt-tab active" id="mbtTabForm" onclick="switchMobileBuilderView('form')">
+      <span>✏️</span> Edit Resume Form
+    </button>
+    <button type="button" class="mbt-tab" id="mbtTabPreview" onclick="switchMobileBuilderView('preview')">
+      <span>👁️</span> Resume & ATS Preview
+      <span class="mbt-badge" id="mbtBadgeScore">ATS Ready</span>
+    </button>
+  </div>
 
   <!-- FORM PANEL -->
   <aside class="gp fp" id="fp">
@@ -787,6 +868,27 @@ document.getElementById('btnSh').addEventListener('click',function(){shTst('&#x1
 /* TOAST */
 var tt2;
 function shTst(ico,msg){var t=document.getElementById('tst');document.getElementById('tsi').innerHTML=ico;document.getElementById('tsm').textContent=msg;t.classList.add('sh');clearTimeout(tt2);tt2=setTimeout(function(){t.classList.remove('sh');},3000);}
+
+/* MOBILE VIEW SWITCHER */
+function switchMobileBuilderView(v) {
+  var m = document.getElementById('rkmain');
+  var bF = document.getElementById('mbtTabForm');
+  var bP = document.getElementById('mbtTabPreview');
+  if (!m || !bF || !bP) return;
+  if (v === 'preview') {
+    m.classList.remove('view-form');
+    m.classList.add('view-preview');
+    bF.classList.remove('active');
+    bP.classList.add('active');
+    window.scrollTo({ top: m.offsetTop - 65, behavior: 'smooth' });
+  } else {
+    m.classList.remove('view-preview');
+    m.classList.add('view-form');
+    bP.classList.remove('active');
+    bF.classList.add('active');
+    window.scrollTo({ top: m.offsetTop - 65, behavior: 'smooth' });
+  }
+}
 
 /* INIT */
 iniSk();updAts();

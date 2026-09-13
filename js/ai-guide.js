@@ -17,7 +17,7 @@ export class AIGuide {
     this.isOpen = false;
     this.isTourActive = false;
     this.voiceEnabled = true;
-    this.lang = 'en'; // 'en' | 'hi'
+    this.lang = 'hi'; // Default robot language is Hindi
     this.activeTab = 'chat'; // 'chat' | 'tour'
     this.synth = window.speechSynthesis || null;
     this.currentUtterance = null;
@@ -61,12 +61,12 @@ export class AIGuide {
         },
         text: {
           en: "Hello! I am Aria, your AI career companion. Our quantum neural engine maps your raw skill vector directly into high-yield technology careers with real-time telemetry.",
-          hi: "नमस्ते! मैं एरिया हूँ, आपकी AI करियर गाइड। हमारा क्वांटम न्यूरल इंजन आपके स्किल्स को लाइव एनालाइज करके बेस्ट टेक जॉब्स और करियर पाथवेज से जोड़ता है।"
+          hi: "नमस्ते! मैं एरिया हूँ, आपकी AI करियर गाइड। हमारा क्वांटम न्यूरल इंजन आपके कौशल को लाइव एनालाइज करके सबसे सही टेक जॉब्स और करियर रास्तों से जोड़ता है।"
         },
         speechText: {
           en: "Hello! I am Aria, your AI career guide. Let's explore how our deep neural network matches your skills with top technology careers.",
-          hi: "नमस्ते! मैं एरिया हूँ, आपकी AI करियर गाइड। चलिए मैं आपको दिखाती हूँ कि हमारा न्यूरल नेटवर्क आपके स्किल्स को बेस्ट टेक जॉब्स से कैसे जोड़ता है।",
-          hiPhonetic: "Namaste! Main Aria hoon, aapki AI career guide. Chaliye main aapko dikhati hoon ki hamara neural network aapke skills ko best tech jobs se kaise jodta hai."
+          hi: "नमस्ते! मैं एरिया हूँ, आपकी AI करियर गाइड। अब मैं आपको आसान भाषा में बताऊँगी कि हमारा न्यूरल नेटवर्क आपके कौशल को सही टेक करियर से कैसे जोड़ता है।",
+          hiPhonetic: "Namaste! Main Aria hoon, aapki AI career guide. Ab main aapko easy Hindi mein bataungi ki hamara neural network aapke skills ko sahi tech careers se kaise jodta hai."
         }
       },
       {
@@ -78,12 +78,12 @@ export class AIGuide {
         },
         text: {
           en: "Select pre-configured student archetypes like Maya Chen (Machine Learning) or Leo Rodriguez (Full-Stack), or paste your resume/bio to auto-extract your competencies.",
-          hi: "यहाँ से आप पहले से मौजूद स्टूडेंट प्रोफाइल्स जैसे AI/ML या फुल-स्टैक चुन सकते हैं, या अपना रेज़्यूमे पेस्ट करके सीधे स्किल्स एक्सट्रैक्ट कर सकते हैं।"
+          hi: "यहाँ से आप पहले से मौजूद स्टूडेंट प्रोफाइल्स चुन सकते हैं, या अपना रेज़्यूमे पेस्ट करके अपने कौशल को तुरंत एक्सट्रेक्ट कर सकते हैं।"
         },
         speechText: {
           en: "Here in your Profile Hub, load a demo archetype or paste your resume to instantly extract and vectorize your skills.",
-          hi: "यहाँ स्टूडेंट प्रोफाइल हब में आप कोई डेमो प्रोफाइल चुन सकते हैं या अपना रेज़्यूमे पेस्ट करके अपने स्किल्स लोड कर सकते हैं।",
-          hiPhonetic: "Yahan Student Profile Hub mein aap koi demo profile chun sakte hain ya apna resume paste karke skills load kar sakte hain."
+          hi: "यहाँ से आप कोई डेमो प्रोफाइल चुन सकते हैं या अपना रेज़्यूमे डाल सकते हैं। मेरे पास आपके कौशल की सही जानकारी तुरंत आ जाती है।",
+          hiPhonetic: "Yahan se aap koi demo profile chun sakte hain ya apna resume daal sakte hain. Mere paas aapke skills ki sahi information turant aa jaati hai."
         }
       },
       {
@@ -95,12 +95,12 @@ export class AIGuide {
         },
         text: {
           en: "Fine-tune 20 individual skill coefficients including Python, PyTorch, Cloud Architecture, and Stats. The neural network recalculates your suitability tensors in real time.",
-          hi: "Python, PyTorch, Cloud और System Design जैसे 20 टेक्निकल स्किल्स के स्लाइडर्स को एडजस्ट करें। हर बदलाव के साथ AI तुरंत आपकी मैचिंग री-कैलकुलेट करता है।"
+          hi: "Python, PyTorch, Cloud और System Design जैसे 20 टेक्निकल स्किल्स के स्लाइडर्स को एडजस्ट करें। हर बदलाव के साथ AI तुरंत आपकी मैचिंग को री-कैल्कुलेट करता है।"
         },
         speechText: {
           en: "Adjust these skill sliders. The neural model recalculates your match scores live with every adjustment.",
-          hi: "इन स्किल स्लाइडर्स को ऊपर-नीचे करके देखें। न्यूरल नेटवर्क तुरंत आपकी मैचिंग और जॉब स्कोर्स को लाइव अपडेट कर देगा।",
-          hiPhonetic: "In skill sliders ko adjust karke dekhein. Neural network turant aapki matching aur job scores ko live update kar dega."
+          hi: "इन स्किल स्लाइडर्स को थोड़ा-थोड़ा बदलिए। जैसे ही आप स्कोर बदलते हैं, सिस्टम तुरंत आपकी फिटनेस और जॉब का सही अंदाज़ा दे देता है।",
+          hiPhonetic: "In skill sliders ko thoda-thoda badlijiye. Jaise hi aap score badalte hain, system turant aapki fitness aur job ka sahi andaaza de deta hai."
         }
       },
       {
@@ -112,12 +112,12 @@ export class AIGuide {
         },
         text: {
           en: "Watch your skill vector flow through hidden dense layers into target career nodes. Hover over any node to trace synaptic activations, or click a career node to focus the match analyzer.",
-          hi: "देखें कि कैसे आपका स्किल वेक्टर हिडन लेयर्स से होते हुए करियर नोड्स तक पहुँचता है। किसी भी नोड पर माउस ले जाकर सिनेप्टिक पल्सेस को लाइव देखें।"
+          hi: "देखें कि कैसे आपका स्किल वेक्टर हिडन लेयर्स से होते हुए करियर नोड्स तक पहुँचता है। किसी भी नोड पर होवर करके सिनेप्टिक पल्सेस को लाइव समझें।"
         },
         speechText: {
           en: "Look at our interactive 60 FPS neural canvas. Synaptic pulses travel through hidden layers to calculate your best career synergy.",
-          hi: "इस 60 FPS न्यूरल कैनवास को देखें। यहाँ सिनेप्टिक पल्सेस के जरिए आपके लिए सबसे बेहतरीन करियर प्रेडिक्ट होता है।",
-          hiPhonetic: "Is 60 FPS neural canvas ko dekhein. Yahan synaptic pulses ke zariye aapke liye best career predict hota hai."
+          hi: "इसे देखिए, यह 60 FPS न्यूरल कैनवास है। यहाँ सिनेप्टिक पल्सेस चलती हैं और आपके लिए सबसे सही करियर का रास्ता दिखाती हैं।",
+          hiPhonetic: "Isse dekhiye, yeh 60 FPS neural canvas hai. Yahan synaptic pulses chalti hain aur aapke liye sabse sahi career ka raasta dikhati hain."
         }
       },
       {
@@ -129,12 +129,12 @@ export class AIGuide {
         },
         text: {
           en: "Explore career opportunities ranked by multidimensional vector similarity. Click 'Pathway' on any card to unlock your 12-week preparation roadmap, ATS resume bullets, or launch an AI Mock Interview.",
-          hi: "न्यूरल मैचिंग द्वारा रैंक की गई जॉब्स देखें। किसी भी जॉब कार्ड पर 'Pathway' पर क्लिक करके 12-हफ़्ते का रोडमैप, रेज़्यूमे टिप्स और मॉक इंटरव्यू एक्सेस करें।"
+          hi: "न्यूरल मैचिंग द्वारा रैंक की गई जॉब्स देखें। किसी भी कार्ड पर 'Pathway' पर क्लिक करके 12-हफ़्ते का रोडमैप, रेज़्यूमे टिप्स और मॉक इंटरव्यू एक्सेस करें।"
         },
         speechText: {
           en: "Here are your top-matched career roles. Click Pathway on any card to view your personalized 12-week preparation roadmap.",
-          hi: "यहाँ आपके टॉप करियर मैचेस हैं। किसी भी कार्ड पर पाथवे पर क्लिक करके अपना 12-हफ़्ते का रोडमैप और मॉक इंटरव्यू शुरू करें।",
-          hiPhonetic: "Yahan aapke top career matches hain. Kisi bhi card par Pathway par click karke apna 12-week roadmap aur mock interview shuru karein."
+          hi: "यहाँ आपके सबसे अच्छे करियर मैच हैं। किसी भी कार्ड पर Pathway पर क्लिक कीजिए, और 12 हफ्तों का आपके लिए बनाया गया रोडमैप तुरंत मिल जाएगा।",
+          hiPhonetic: "Yahan aapke sabse acche career matches hain. Kisi bhi card par Pathway par click kijiye, aur 12 hafte ka aapke liye bana hua roadmap turant mil jayega."
         }
       },
       {
@@ -146,12 +146,12 @@ export class AIGuide {
         },
         text: {
           en: "Search live verified job openings directly across LinkedIn, Naukri, Indeed, and Google Careers. Apply directly on original corporate platforms with 1-click launch.",
-          hi: "LinkedIn, Naukri, Indeed और Google Careers जैसे ऑफिशियल पोर्टल्स पर लाइव जॉब्स सर्च करें और 1-क्लिक में ओरिजिनल वेबसाइट पर अप्लाई करें।"
+          hi: "LinkedIn, Naukri, Indeed और Google Careers जैसे ऑफिशियल पोर्टल्स पर लाइव जॉब्स खोजें और सीधे कंपनी की वेबसाइट पर अप्लाई करें।"
         },
         speechText: {
           en: "Finally, our Official Job Portal Gateway connects you directly to live job listings on LinkedIn, Naukri, Indeed, and Google Careers.",
-          hi: "और अंत में, हमारा ऑफिशियल जॉब पोर्टल गेटवे आपको सीधे लिंक्डइन, नौकरी और इंडीड से जोड़ता है जहाँ आप 1-क्लिक में अप्लाई कर सकते हैं।",
-          hiPhonetic: "Aur aakhir mein, hamara Official Job Portal Gateway aapko seedhe LinkedIn, Naukri aur Google Careers se jodta hai jahan aap seedhe apply kar sakte hain."
+          hi: "और आख़िर में, हमारा ऑफिशियल जॉब पोर्टल आपको सीधे LinkedIn, Naukri और Google Careers से जोड़ता है। यहाँ से आप सीधा अप्लाई कर सकते हैं।",
+          hiPhonetic: "Aur aakhir mein, hamara official job portal aapko seedhe LinkedIn, Naukri aur Google Careers se jodta hai. Yahan se aap seedha apply kar sakte hain."
         }
       }
     ];
@@ -208,6 +208,29 @@ export class AIGuide {
     this.speakingTimer = null;
   }
 
+  syncMobileGuideVisibility() {
+    const chatView = document.getElementById('ariaChatView');
+    if (!chatView) return;
+
+    const inputRow = chatView.querySelector('.aria-input-row');
+    const chipsWrap = chatView.querySelector('.aria-chips-wrap');
+    const isMobile = window.innerWidth <= 768;
+    const shouldShowTextArea = !isMobile || (this.isOpen && this.activeTab === 'chat' && !this.isTourActive);
+
+    if (inputRow) {
+      inputRow.style.display = shouldShowTextArea ? 'flex' : 'none';
+      inputRow.style.visibility = shouldShowTextArea ? 'visible' : 'hidden';
+      inputRow.style.opacity = shouldShowTextArea ? '1' : '0';
+      inputRow.setAttribute('data-mobile-hidden', shouldShowTextArea ? 'false' : 'true');
+    }
+
+    if (chipsWrap) {
+      chipsWrap.style.display = shouldShowTextArea ? 'flex' : 'none';
+      chipsWrap.style.visibility = shouldShowTextArea ? 'visible' : 'hidden';
+      chipsWrap.style.opacity = shouldShowTextArea ? '1' : '0';
+    }
+  }
+
   bindEvents() {
     // Dock Button Click: If in tour, clicking re-speaks step; else opens/closes chat
     if (this.dockBtn) {
@@ -216,6 +239,13 @@ export class AIGuide {
         this.unlockAudioContext();
 
         if (this.isTourActive) {
+          const isMobile = window.innerWidth <= 768;
+
+          if (isMobile) {
+            this.exitTour();
+            return;
+          }
+
           const step = this.tourSteps[this.currentStep];
           if (step) {
             this.clearAutoAdvance();
@@ -397,6 +427,7 @@ export class AIGuide {
     // Dynamic repositioning on window resize or scroll during active tour
     let repositionTimer = null;
     const handleReposition = () => {
+      this.syncMobileGuideVisibility();
       if (!this.isTourActive) return;
       if (repositionTimer) clearTimeout(repositionTimer);
       repositionTimer = setTimeout(() => {
@@ -420,6 +451,20 @@ export class AIGuide {
         console.warn('Synth resume error:', e);
       }
     }
+  }
+
+  playLaunchIntro() {
+    if (!this.voiceEnabled) return;
+
+    this.stopSpeaking();
+
+    const introHi = "नमस्ते! मैं एरिया हूँ. मैं आपकी मदद करूंगा. आप करियर, रिज्यूमे या स्किल्स के बारे में कुछ भी पूछ सकते हैं.";
+
+    this.speak(introHi, 'hi', () => {
+      if (this.voiceEnabled && this.lang === 'hi') {
+        this.speak('मैं आपकी करियर यात्रा, रिज्यूमे, सैलरी और स्किल ग्रोथ में आसान भाषा में मदद करूँगा।', 'hi');
+      }
+    });
   }
 
   setLanguage(lang) {
@@ -492,6 +537,8 @@ export class AIGuide {
       if (this.tourView) this.tourView.classList.add('active');
       this.clearSpotlight();
     }
+
+    this.syncMobileGuideVisibility();
   }
 
   openGuide() {
@@ -503,6 +550,7 @@ export class AIGuide {
       this.guideModal.classList.add('active');
     }
     this.switchTab('chat');
+    this.syncMobileGuideVisibility();
   }
 
   closeGuide() {
@@ -514,6 +562,7 @@ export class AIGuide {
     if (!this.isTourActive) {
       this.clearSpotlight();
     }
+    this.syncMobileGuideVisibility();
   }
 
   // Hides the chatbox panel ONLY, without stopping speech or clearing state.
@@ -522,6 +571,44 @@ export class AIGuide {
     this.isOpen = false;
     if (this.guideModal) {
       this.guideModal.classList.remove('active');
+    }
+
+    if (this.tourBubble && window.innerWidth <= 768) {
+      this.tourBubble.style.display = 'none';
+    }
+
+    const chatView = document.getElementById('ariaChatView');
+    if (!chatView) return;
+
+    const inputRow = chatView.querySelector('.aria-input-row');
+    const chipsWrap = chatView.querySelector('.aria-chips-wrap');
+
+    if (inputRow) {
+      inputRow.style.display = 'none';
+      inputRow.style.visibility = 'hidden';
+      inputRow.style.opacity = '0';
+      inputRow.setAttribute('data-mobile-hidden', 'true');
+    }
+
+    if (chipsWrap) {
+      chipsWrap.style.display = 'none';
+      chipsWrap.style.visibility = 'hidden';
+      chipsWrap.style.opacity = '0';
+    }
+
+    if (window.innerWidth <= 768) {
+      const chatInputRow = document.querySelector('#ariaChatView .aria-input-row');
+      const chatChips = document.querySelector('#ariaChatView .aria-chips-wrap');
+      if (chatInputRow) {
+        chatInputRow.style.display = 'none';
+        chatInputRow.style.visibility = 'hidden';
+        chatInputRow.style.opacity = '0';
+      }
+      if (chatChips) {
+        chatChips.style.display = 'none';
+        chatChips.style.visibility = 'hidden';
+        chatChips.style.opacity = '0';
+      }
     }
   }
 
@@ -535,6 +622,28 @@ export class AIGuide {
     this.isTourActive = true;
     this.activeTab = 'tour';
     this.currentStep = stepIdx;
+
+    if (this.tourBubble && window.innerWidth <= 768) {
+      this.tourBubble.style.display = 'none';
+    }
+
+    const chatView = document.getElementById('ariaChatView');
+    if (chatView && window.innerWidth <= 768) {
+      const chatInputRow = chatView.querySelector('.aria-input-row');
+      const chatChips = chatView.querySelector('.aria-chips-wrap');
+      if (chatInputRow) {
+        chatInputRow.style.display = 'none';
+        chatInputRow.style.visibility = 'hidden';
+        chatInputRow.style.opacity = '0';
+      }
+      if (chatChips) {
+        chatChips.style.display = 'none';
+        chatChips.style.visibility = 'hidden';
+        chatChips.style.opacity = '0';
+      }
+    }
+
+    this.syncMobileGuideVisibility();
 
     // Just hide the chatbox visually (do NOT stop speech - it hasn't started yet)
     this.hideChatboxOnly();
@@ -974,7 +1083,7 @@ export class AIGuide {
       return chosenTourLang === 'hi' ? {
         lang: 'hi',
         html: "🚀 <strong>लाइव वेबसाइट टूर शुरू हो रहा है!</strong><br>चैटबॉक्स बंद करके मैं आपके पास आ रही हूँ और आपको एक-एक करके पूरी वेबसाइट समझाऊँगी। चलिए!",
-        speechText: "चैटबॉक्स बंद हो रहा है। चलिए मैं आपको पूरी वेबसाइट लाइव घूमकर समझाती हूँ!"
+        speechText: "चैटबॉक्स बंद हो रहा है. चलिए, मैं आपको वेबसाइट के हर हिस्से को आसान भाषा में समझाता हूँ."
       } : {
         lang: 'en',
         html: "🚀 <strong>Starting Autonomous Live Tour!</strong><br>Closing the chatbox now. Watch me fly over to each section and explain the entire platform in real time!",
@@ -986,7 +1095,7 @@ export class AIGuide {
       return isHi ? {
         lang: 'hi',
         html: "🌟 <strong>2026 के टॉप हाई-ग्रोथ टेक करियर:</strong><br>1. <strong>AI/ML Systems Engineer</strong>: ₹28 - ₹45 LPA (98% ग्रोथ)<br>2. <strong>Cloud & DevOps Architect</strong>: ₹24 - ₹38 LPA (94% डिमांड)<br>3. <strong>Full-Stack Neural Developer</strong>: ₹20 - ₹35 LPA<br><br>👉 नीचे दिए गए <em>'AI Career Matches'</em> पैनल में अपने लिए बेस्ट मैच देखें!",
-        speechText: "2026 ke top tech careers hain: AI aur ML Systems Engineer, Cloud and DevOps Architect, aur Full-Stack Neural Developer. AI Career Matches panel mein apni live matching check karein!"
+        speechText: "2026 में सबसे अच्छे टेक करियर हैं AI और ML, Cloud और DevOps, और Full-Stack developer. AI Career Matches में अपनी matching देखिए."
       } : {
         lang: 'en',
         html: "🌟 <strong>Top High-Growth Tech Roles in 2026:</strong><br>1. <strong>AI/ML Systems Engineer</strong> ($165k-$230k, 98% growth)<br>2. <strong>Cloud & Distributed Systems Architect</strong> ($150k-$210k)<br>3. <strong>Full-Stack Neural Developer</strong> ($130k-$190k).<br><br>Check your live match scores in the <em>Ranked Recommendations</em> panel!",
@@ -998,7 +1107,7 @@ export class AIGuide {
       return isHi ? {
         lang: 'hi',
         html: "🧠 <strong>न्यूरल मैचिंग कैसे काम करता है:</strong><br>हम आपके 20 टेक्निकल स्किल्स को एक मल्टी-डायमेंशनल लेटेंट वेक्टर में कन्वर्ट करते हैं। हमारा डीप न्यूरल नेटवर्क (64→32→16 लेयर्स) कोसाइन सिमिलैरिटी और रियल-टाइम इंडस्ट्री डिमांड के आधार पर आपके लिए सबसे उपयुक्त जॉब प्रेडिक्ट करता है।",
-        speechText: "Neural matching kaise kaam karta hai: Hum aapke technical skills ko multidimensional feature vector mein convert karte hain. Deep neural network cosine similarity ke zariye aapke liye best career predict karta hai."
+        speechText: "न्यूरल matching आसान भाषा में समझें तो: हम आपकी skills को pattern में डालते हैं. फिर best jobs का match निकालते हैं."
       } : {
         lang: 'en',
         html: "🧠 <strong>How Neural Matching Works:</strong><br>We convert your proficiencies into a 20-dimensional skill vector. The neural network's dense latent layers compute cosine similarity against target job requirements, weighting by 2026 industry demand in real-time.",
@@ -1010,7 +1119,7 @@ export class AIGuide {
       return isHi ? {
         lang: 'hi',
         html: "⚡ <strong>प्रोफाइल मजबूत करने के 3 टिप्स:</strong><br>1. <strong>लाइव प्रोजेक्ट्स</strong>: गिटहब पर कम से कम 2 डिप्लॉयड प्रोजेक्ट्स (Docker/FastAPI/Next.js) लिंक करें।<br>2. <strong>स्किल गैप पूरा करें</strong>: हमारे 12-हफ़्ते के रोडमैप को फॉलो करें।<br>3. <strong>मॉक इंटरव्यू</strong>: हमारे <strong>AI Mock Interviewer</strong> के साथ लाइव प्रैक्टिस करें!",
-        speechText: "Profile improve karne ke teen tips: GitHub par do deployed projects add karein, 12-week roadmap se skill gaps poora karein, aur hamare AI Mock Interviewer ke saath practice karein."
+        speechText: "प्रोफाइल सही करने के तीन आसान तरीके हैं: GitHub पर projects डालें, skill gaps पूरा करें, और mock interview में practice करें."
       } : {
         lang: 'en',
         html: "⚡ <strong>3 Steps to Level Up Your Profile:</strong><br>1. Build & deploy 2 real-world portfolio projects (Docker/FastAPI/Next.js).<br>2. Close skill gaps using our 12-Week Interactive Roadmap.<br>3. Practice with our <strong>Mock Interview Studio</strong>!",
@@ -1022,7 +1131,7 @@ export class AIGuide {
       return isHi ? {
         lang: 'hi',
         html: "🎯 <strong>आपके लिए अनुशंसित करियर:</strong><br>आपके प्रोफाइल वेक्टर के आधार पर, <strong>AI/ML Research</strong> और <strong>Cloud Solutions</strong> आपके लिए सबसे हाई-कॉन्फिडेंस मैचेस हैं। आप साइड पैनल से स्किल स्लाइडर्स बदलकर लाइव मैचिंग टेस्ट कर सकते हैं!",
-        speechText: "Aapke liye best career fit: Aapke skill profile ke hisaab se AI Research aur Cloud Solutions sabse strong match hain. Sliders adjust karke live match test karein!"
+        speechText: "आपके लिए सबसे अच्छे fit हैं AI Research और Cloud Solutions. sliders बदलकर live match देखिए."
       } : {
         lang: 'en',
         html: "🎯 <strong>Your Best Career Fit:</strong><br>Based on your current skill coefficients, <strong>AI/ML Research</strong> and <strong>Cloud Systems</strong> have the strongest neural alignment. Adjust the sliders in the left panel to test real-time career matching!",
@@ -1034,7 +1143,7 @@ export class AIGuide {
     return isHi ? {
       lang: 'hi',
       html: `🤖 <strong>नमस्ते! मैं एरिया हूँ:</strong><br>मैं आपकी पूरी करियर जर्नी में मदद करने के लिए यहाँ हूँ! आप मुझसे टेक जॉब्स, सैलरी, रेज़्यूमे या 12-हफ़्ते के रोडमैप के बारे में कुछ भी पूछ सकते हैं, या ऊपर <strong>'🎯 गाइडेड टूर'</strong> टैब दबाकर पूरा वॉकथ्रू देख सकते हैं!`,
-      speechText: "Namaste! Main Aria hoon, aapki AI career mentor. Main aapki poori tech career journey mein madad kar sakti hoon. Mujhse career, salary ya roadmap ke baare mein kuch bhi poochein!"
+      speechText: "नमस्ते! मैं एरिया हूँ. मैं आपकी career journey में आसान भाषा में मदद करता हूँ. आप मुझसे job, salary, resume या roadmap के बारे में पूछ सकते हैं."
     } : {
       lang: 'en',
       html: `🤖 <strong>Aria:</strong> I'm always here to guide your tech journey! Ask me about salary brackets, skill gaps, or click the <strong>'Guided Tour'</strong> tab above for an interactive platform walkthrough.`,
@@ -1060,6 +1169,41 @@ export class AIGuide {
     }
   }
 
+  normalizeHindiSpeechText(text) {
+    if (!text || !/[\u0900-\u097F]/.test(text)) return text;
+
+    const cleaned = text
+      .replace(/AI\b/gi, 'ए आई')
+      .replace(/ML\b/gi, 'एम एल')
+      .replace(/GitHub/gi, 'गिट हब')
+      .replace(/LinkedIn/gi, 'लिंक्ड इन')
+      .replace(/Naukri/gi, 'नौकरी')
+      .replace(/Indeed/gi, 'इंडीड')
+      .replace(/Cloud/gi, 'क्लाउड')
+      .replace(/Resume/gi, 'रेज़्यूमे')
+      .replace(/Roadmap/gi, 'रोडमैप')
+      .replace(/Profile/gi, 'प्रोफाइल')
+      .replace(/Career/gi, 'करियर')
+      .replace(/Salary/gi, 'सैलरी')
+      .replace(/Skills/gi, 'स्किल्स')
+      .replace(/Mock Interview/gi, 'मॉक इंटरव्यू')
+      .replace(/Neural/gi, 'न्यूरल')
+      .replace(/Network/gi, 'नेटवर्क')
+      .replace(/Guide/gi, 'गाइड')
+      .replace(/Aria/gi, 'एरिया')
+      .replace(/Portal/gi, 'पोर्टल')
+      .replace(/Career/gi, 'करियर')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    return cleaned
+      .replace(/([।!?])\s*/g, '$1 ')
+      .replace(/\s*,\s*/g, ', ')
+      .replace(/(अब|यहाँ|जैसे|और|फिर|अगर|लेकिन|क्योंकि)\s*/gi, '$1, ')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
   speak(text, forcedLang = null, customOnEnd = null) {
     this.stopSpeaking();
     if (!this.synth || !this.voiceEnabled) {
@@ -1077,58 +1221,91 @@ export class AIGuide {
         return;
       }
 
+      const hasDevanagari = /[\u0900-\u097F]/.test(cleanText);
+      const isHindi = activeLang === 'hi' || hasDevanagari;
+      const speechText = isHindi ? this.normalizeHindiSpeechText(cleanText) : cleanText;
+
       const voices = (this.synth.getVoices && this.synth.getVoices().length > 0)
         ? this.synth.getVoices()
         : this.voices;
 
-      const hasDevanagari = /[\u0900-\u097F]/.test(cleanText);
-      const isHindi = activeLang === 'hi' || hasDevanagari;
+      const voicePriority = isHindi
+        ? ['Google हिन्दी', 'Google हिंदी', 'Microsoft Hemant', 'Hindi', 'hi-IN', 'hi']
+        : ['Microsoft Aria', 'Microsoft Zira', 'Google US English', 'Samantha', 'Jenny', 'Google English', 'Female', 'en-US', 'en'];
 
       let chosenVoice = null;
-      let speechContent = cleanText;
+      let speechContent = speechText;
 
-      if (isHindi) {
-        chosenVoice = voices.find(v =>
-          v.lang.toLowerCase().startsWith('hi') ||
-          v.name.toLowerCase().includes('hindi') ||
-          v.name.toLowerCase().includes('kalpana') ||
-          v.name.toLowerCase().includes('hemant') ||
-          v.name.toLowerCase().includes('google हिन्दी')
-        );
+      if (voices && voices.length > 0) {
+        const lowerPriority = voicePriority.map(v => v.toLowerCase());
+
+        chosenVoice = voices.find(v => {
+          const name = (v.name || '').toLowerCase();
+          const lang = (v.lang || '').toLowerCase();
+          const combined = `${name} ${lang}`;
+          return lowerPriority.some(pref => combined.includes(pref));
+        }) || null;
+
+        if (!chosenVoice && isHindi) {
+          chosenVoice = voices.find(v =>
+            (v.lang || '').toLowerCase().startsWith('hi') ||
+            (v.name || '').toLowerCase().includes('hindi') ||
+            (v.name || '').toLowerCase().includes('hemant')
+          ) || null;
+        }
+
+        if (!chosenVoice && !isHindi) {
+          chosenVoice = voices.find(v =>
+            (v.lang || '').toLowerCase().startsWith('en') && (
+              (v.name || '').toLowerCase().includes('zira') ||
+              (v.name || '').toLowerCase().includes('aria') ||
+              (v.name || '').toLowerCase().includes('samantha') ||
+              (v.name || '').toLowerCase().includes('jenny') ||
+              (v.name || '').toLowerCase().includes('female') ||
+              (v.name || '').toLowerCase().includes('google')
+            )
+          ) || null;
+        }
 
         if (!chosenVoice) {
-          chosenVoice = voices.find(v =>
-            v.lang.toLowerCase().includes('en-in') ||
-            v.name.toLowerCase().includes('india') ||
-            v.name.toLowerCase().includes('heera') ||
-            v.name.toLowerCase().includes('neerja')
-          );
+          chosenVoice = voices.find(v => (v.lang || '').toLowerCase().startsWith(isHindi ? 'hi' : 'en')) || voices[0] || null;
         }
 
         const currentStepObj = this.tourSteps[this.currentStep];
-        if (currentStepObj && currentStepObj.speechText && currentStepObj.speechText.hiPhonetic) {
-          if (!chosenVoice || !chosenVoice.lang.toLowerCase().startsWith('hi')) {
-            speechContent = currentStepObj.speechText.hiPhonetic;
+        if (isHindi && currentStepObj && currentStepObj.speechText && currentStepObj.speechText.hiPhonetic) {
+          const hasHindiVoice = chosenVoice && ((chosenVoice.lang || '').toLowerCase().startsWith('hi') || (chosenVoice.name || '').toLowerCase().includes('hindi'));
+          if (!hasHindiVoice) {
+            speechContent = String(currentStepObj.speechText.hiPhonetic || cleanText);
           }
         }
-      } else {
-        chosenVoice = voices.find(v =>
-          (v.name.includes('Natural') || v.name.includes('Aria') || v.name.includes('Google') || v.name.includes('Zira') || v.name.includes('Samantha') || v.name.includes('David')) &&
-          v.lang.startsWith('en')
-        );
       }
 
-      if (!chosenVoice && voices.length > 0) {
-        chosenVoice = voices[0];
+      if (isHindi) {
+        speechContent = speechContent
+          .replace(/\s+/g, ' ')
+          .replace(/\s+,/g, ',')
+          .replace(/,\s+/g, ', ')
+          .replace(/\s+\./g, '.')
+          .trim();
+      }
+
+      if (isHindi && !cleanText.includes('Namaste') && !cleanText.includes('Main') && !cleanText.includes('मैं')) {
+        speechContent = speechContent
+          .replace(/\s+/g, ' ')
+          .replace(/,/g, ', ')
+          .replace(/\./g, '. ')
+          .trim();
       }
 
       this.currentUtterance = new SpeechSynthesisUtterance(speechContent);
-      this.currentUtterance.rate = isHindi ? 0.98 : 1.0;
-      this.currentUtterance.pitch = 1.06;
+      this.currentUtterance.volume = 1;
+      this.currentUtterance.rate = isHindi ? 0.64 : 0.94;
+      this.currentUtterance.pitch = isHindi ? 0.98 : 1.14;
+      this.currentUtterance.text = speechContent;
 
       if (chosenVoice) {
         this.currentUtterance.voice = chosenVoice;
-        this.currentUtterance.lang = chosenVoice.lang;
+        this.currentUtterance.lang = chosenVoice.lang || (isHindi ? 'hi-IN' : 'en-US');
       } else {
         this.currentUtterance.lang = isHindi ? 'hi-IN' : 'en-US';
       }
@@ -1155,6 +1332,11 @@ export class AIGuide {
         if (this.waveContainer) this.waveContainer.classList.add('speaking');
         if (this.tourWaveform) this.tourWaveform.classList.add('speaking');
         if (this.robotRig) this.robotRig.classList.add('speaking');
+
+        if (isHindi) {
+          this.currentUtterance.rate = 0.66;
+          this.currentUtterance.pitch = 1.0;
+        }
 
         // ═══ WATCHDOG: Polls every 400ms. If synth stopped speaking but onend didn't fire
         //     (common Chrome bug), trigger handleSpeechEnd manually. ═══

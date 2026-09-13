@@ -566,6 +566,22 @@ h1, h2, h3, h4, h5, .font-display {
   font-size: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .floating-theme-pill {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .floating-theme-pill {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
 .theme-toggle-btn {
   display: inline-flex;
   align-items: center;
@@ -1125,6 +1141,30 @@ h1, h2, h3, h4, h5, .font-display {
   15% { opacity: 0.8; }
   85% { opacity: 0.8; }
   100% { top: 110%; opacity: 0; }
+}
+
+@keyframes mobileSplashDoorOpen {
+  0% {
+    opacity: 0;
+    transform: scale(1.06) perspective(1000px) rotateX(10deg);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) perspective(1000px) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes mobileSplashContentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes floatUp {

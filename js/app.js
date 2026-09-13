@@ -1,7 +1,7 @@
 import { ALL_SKILLS, JOB_DATABASE, STUDENT_ARCHETYPES } from './job-data.js';
 import { MatchingEngine } from './matching-engine.js';
 import { NeuralVisualizer } from './neural-canvas.js';
-import { AIGuide } from './ai-guide.js?v=2.5';
+import { AIGuide } from './ai-guide.js?v=2.6';
 import { ResumeOptimizer } from './resume-optimizer.js';
 import { MockInterviewer } from './mock-interviewer.js';
 import { MarketAnalytics } from './market-analytics.js';
@@ -109,6 +109,9 @@ class SynapseApp {
 
     // Initialize Real-Time Job Portal Footer Gateway & Live Search
     this.initFooterPortalGateway();
+
+    // Initialize Mobile Navigation Drawer & Bottom Dock
+    this.initMobileNav();
   }
 
   /* ==========================================================================
@@ -350,8 +353,13 @@ class SynapseApp {
     const splash = document.getElementById('appIntroSplash');
     if (!splash) return;
 
-    // If previously seen in this tab session, remove splash immediately so scrolling is never delayed
+    // On mobile after the first visit, skip the full intro entirely so the app opens instantly.
+    const isSmallScreen = window.innerWidth <= 860;
     if (sessionStorage.getItem('synapse_intro_seen')) {
+      splash.classList.add('splash-removed');
+      return;
+    }
+    if (isSmallScreen && sessionStorage.getItem('synapse_intro_seen_mobile')) {
       splash.classList.add('splash-removed');
       return;
     }
@@ -399,7 +407,12 @@ class SynapseApp {
     const dismissSplash = () => {
       if (isFinished) return;
       isFinished = true;
-      try { sessionStorage.setItem('synapse_intro_seen', 'true'); } catch (e) {}
+      try {
+        sessionStorage.setItem('synapse_intro_seen', 'true');
+        if (window.innerWidth <= 860) {
+          sessionStorage.setItem('synapse_intro_seen_mobile', 'true');
+        }
+      } catch (e) {}
       if (fill) fill.style.width = '100%';
       if (percentEl) percentEl.textContent = '100%';
       if (statusEl) statusEl.textContent = 'ACCESS GRANTED • WELCOME';
@@ -408,12 +421,20 @@ class SynapseApp {
         this.playCyberTone('match');
       }
 
+      const isMobileFastExit = window.innerWidth <= 860;
+      if (isMobileFastExit) {
+        setTimeout(() => {
+          splash.classList.add('splash-removed');
+        }, 700);
+        return;
+      }
+
       setTimeout(() => {
         splash.classList.add('splash-hiding');
         setTimeout(() => {
           splash.classList.add('splash-removed');
         }, 600);
-      }, 200);
+      }, 120);
     };
 
     if (skipBtn) {
@@ -449,9 +470,9 @@ class SynapseApp {
     };
     window.addEventListener('keydown', keyHandler);
 
-    // Smooth counter ticker (compact 1.2 seconds)
+    // Quick but readable first-open flow on mobile: enough time to see the branded door, then hand off immediately.
     const startTime = performance.now();
-    const totalDuration = 1200;
+    const totalDuration = window.innerWidth <= 860 ? 450 : 1200;
 
     const frame = (now) => {
       if (isFinished) return;
@@ -549,7 +570,7 @@ class SynapseApp {
       btn.classList.toggle('active', isActive);
     });
 
-    // Update Floating Theme Pill
+    // Update Floating Theme Pill & Mobile Header Theme Button
     const floatText = document.getElementById('floatingThemeText');
     if (floatText) {
       floatText.textContent = normalized === 'nebula' ? 'THEME: NEON NEBULA' : 'THEME: CYBER CYAN';
@@ -557,6 +578,10 @@ class SynapseApp {
     const floatIcon = document.getElementById('floatingThemeIcon');
     if (floatIcon) {
       floatIcon.textContent = normalized === 'nebula' ? '🔮' : '🌌';
+    }
+    const mobileIcon = document.getElementById('mobileThemeIcon');
+    if (mobileIcon) {
+      mobileIcon.textContent = normalized === 'nebula' ? '🔮' : '🌌';
     }
 
     if (playSound) {
@@ -567,6 +592,130 @@ class SynapseApp {
   toggleTheme() {
     const nextTheme = this.currentTheme === 'nebula' ? 'dark' : 'nebula';
     this.setTheme(nextTheme, true);
+  }
+
+  /* ==========================================================================
+     Mobile Navigation Drawer & Bottom Dock Controller
+     ========================================================================== */
+  initMobileNav() {
+    const toggleBtn     = document.getElementById('mobileNavToggleBtn');
+    const closeBtn      = document.getElementById('mobileNavCloseBtn');
+    const drawer        = document.getElementById('navActionsWrap');
+    const backdrop      = document.getElementById('mobileNavBackdrop');
+    const mobileThemeBtn= document.getElementById('mobileThemeToggleBtn');
+
+    const openDrawer = () => {
+      if (drawer) drawer.classList.add('active');
+      if (backdrop) backdrop.classList.add('active');
+      if (toggleBtn) toggleBtn.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeDrawer = () => {
+      if (drawer) drawer.classList.remove('active');
+      if (backdrop) backdrop.classList.remove('active');
+      if (toggleBtn) toggleBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (drawer && drawer.classList.contains('active')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+    // Auto-close drawer when action tiles or external links inside drawer are tapped
+    if (drawer) {
+      drawer.querySelectorAll('button:not(#btnThemeDark):not(#btnThemeNebula), a').forEach(el => {
+        el.addEventListener('click', () => {
+          if (window.innerWidth <= 860) {
+            closeDrawer();
+          }
+        });
+      });
+    }
+
+    // Mobile Header Theme Switcher
+    if (mobileThemeBtn) {
+      mobileThemeBtn.addEventListener('click', () => {
+        this.toggleTheme();
+      });
+    }
+
+    // Bottom Navigation Dock Tabs (Native-app feel)
+    const dockHome    = document.getElementById('dockBtnHome');
+    const dockJobs    = document.getElementById('dockBtnJobs');
+    const dockCopilot = document.getElementById('dockBtnCopilot');
+    const dockMCQ     = document.getElementById('dockBtnMCQ');
+    const dockMenu    = document.getElementById('dockBtnMenu');
+
+    const setDockActive = (targetBtn) => {
+      document.querySelectorAll('.dock-tab').forEach(tab => tab.classList.remove('active'));
+      if (targetBtn) targetBtn.classList.add('active');
+    };
+
+    if (dockHome) {
+      dockHome.addEventListener('click', () => {
+        setDockActive(dockHome);
+        closeDrawer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    if (dockJobs) {
+      dockJobs.addEventListener('click', () => {
+        setDockActive(dockJobs);
+        closeDrawer();
+        const recSection = document.getElementById('recommendationsSection');
+        if (recSection) {
+          recSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    if (dockCopilot) {
+      dockCopilot.addEventListener('click', () => {
+        setDockActive(dockCopilot);
+        closeDrawer();
+        const btn = document.getElementById('openCareerCopilotBtn');
+        if (btn) btn.click();
+      });
+    }
+
+    if (dockMCQ) {
+      dockMCQ.addEventListener('click', () => {
+        setDockActive(dockMCQ);
+        closeDrawer();
+        const btn = document.getElementById('openPlacementMCQBtn');
+        if (btn) btn.click();
+      });
+    }
+
+    if (dockMenu) {
+      dockMenu.addEventListener('click', () => {
+        if (drawer && drawer.classList.contains('active')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+          setDockActive(dockMenu);
+        }
+      });
+    }
+
+    // Keyboard Escape to close drawer
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) {
+        closeDrawer();
+      }
+    });
   }
 
   /* ==========================================================================
